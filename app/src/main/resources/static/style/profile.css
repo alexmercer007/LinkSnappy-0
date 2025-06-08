@@ -1,0 +1,1029 @@
+
+:root {
+
+   
+   --h: 20dvh;
+   --wHeader: 30%;
+
+}
+
+/**------------------------------------------------------------------------------------------------**/
+
+body {
+
+  display: flex;
+  position: relative;
+  background: linear-gradient( to bottom, rgba(21, 40, 81, 0.9), rgba(75, 96, 140, 0.9), rgba(21, 40, 81, 0.9), rgba(21, 40, 81, 0.8));
+  
+  flex-direction: column;
+  
+
+}
+
+
+/**------------------------------------------------------------------------------------------------**/
+
+.divHeader {
+
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: var(--h);
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+header {
+   
+  display: flex;
+  position: relative;
+  width: 80%;
+  height: var(--h);
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border: 2px solid white;
+  
+
+}
+
+
+.divFrontPage {
+
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: var(--h);
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.labelFrontPage{
+
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: var(--h);
+
+
+}
+
+.imgFrontPage {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  
+
+}
+
+/**------------------------------------------------------------------------------------------------**/
+
+
+.divProfile {
+
+  display: flex;
+  position: relative;
+  width: 8%;
+  height: 100%;
+  flex-wrap: wrap;
+  bottom: 50px;
+  left: 20%;
+
+}
+
+.labelProfile {
+ 
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  
+  border-radius: 150px;
+  border: 2px solid white;
+
+}
+
+.imgProfile {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  
+  border-radius: 150px;
+
+
+}
+
+
+
+input {
+
+  display:flex;
+
+}
+
+.selectFrontPage {
+
+  color: whitesmoke;
+  font-size: 1.1rem;
+  display: flex;
+  position: relative;
+  width: 15%;
+  height: 40px;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  right: 20%;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.selectFrontPage:hover {
+    
+    background-color: cornflowerblue;
+    transform: scale(1.1);
+    
+} 
+
+.selectFrontPage:active {
+    
+    background-color: cornflowerblue;
+    transform: scale(0.9);
+    
+}
+
+/**------------------------------------------------------------------------------------------------**/
+
+.divOptionalButtonsPanel {
+
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  max-height: 200px;
+  bottom: 50px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.divOptionalButtons {
+
+  display: flex;
+  position: relative;
+  width: 80%;
+  height: 100px;
+  max-height: 200px;
+  background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+  border: 2px solid rgba(237, 239, 245, 0.8);
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  
+}
+
+
+
+.optionalButtonPersonal {
+
+  color: white;
+  font-size: 1rem;
+  width: 15%;
+  height: 35px; 
+  background-color: blue;
+  border-radius: 10px;
+  margin:10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.optionalButtonPersonal:hover {
+
+  background-color: black;  
+  transform: scale(1.1);
+
+}
+
+.optionalButtonPersonal:active {
+
+  background-color: black;
+  transform: scale(0.9);
+
+}
+
+
+.optionalButtonAlbums {
+
+  color: white;
+  font-size: 1rem;
+  width: 15%;
+  height: 35px; 
+  background-color: Orchid;
+  border-radius: 10px;
+  margin:10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.optionalButtonAlbums:hover {
+
+  background-color: black;  
+  transform: scale(1.1);
+
+}
+
+.optionalButtonAlbums:active {
+
+  background-color: black;
+  transform: scale(0.9);
+
+}
+
+
+.optionalButtonFriends {
+
+  color: white;
+  font-size: 1rem;
+  width: 15%;
+  height: 35px; 
+  background-color: Green;
+  border-radius: 10px;
+  margin:10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.optionalButtonFriends:hover {
+
+  background-color: black;  
+  transform: scale(1.1);
+
+}
+
+.optionalButtonFriends:active {
+
+  background-color: black;
+  transform: scale(0.9);
+
+}
+
+
+.optionalButtonCommunity {
+
+  color: white;
+  font-size: 1rem;
+  width: 15%;
+  height: 35px; 
+  background-color: Orange;
+  border-radius: 10px;
+  margin:10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.optionalButtonCommunity:hover {
+
+  background-color: black;  
+  transform: scale(1.1);
+
+}
+
+.optionalButtonCommunity:active {
+
+  background-color: black;
+  transform: scale(0.9);
+
+}
+
+
+.optionalButtonProjects {
+
+  color: white;
+  font-size: 1rem;
+  width: 15%;
+  height: 35px; 
+  background-color: Gray;
+  border-radius: 10px;
+  margin:10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.optionalButtonProjects:hover {
+
+  background-color: black;  
+  transform: scale(1.1);
+
+}
+
+.optionalButtonProjects:active {
+
+  background-color: black;
+  transform: scale(0.9);
+
+}
+
+
+.optionalButtonGaming {
+
+  color: white;
+  font-size: 1rem;
+  width: 15%;
+  height: 35px; 
+  background-color: Crimson;
+  border-radius: 10px;
+  margin:10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.optionalButtonGaming:hover {
+
+  background-color: black;  
+  transform: scale(1.1);
+
+}
+
+.optionalButtonGaming:active {
+
+  background-color: black;
+  transform: scale(0.9);
+
+}
+
+/**------------------------------------------------------------------------------------------------**/
+
+
+
+
+/**---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**/
+
+
+.divContainer {
+    
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-width: 800px;
+    height: 500px;  
+    align-content: center;
+    justify-content: center;
+    bottom: 5px;
+        
+    
+}
+
+.divContainerPersonal {
+ 
+  display:flex;
+  position: relative;
+  width: 20%;
+  min-width: 180px;
+  height: 500px;
+  background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+  border: 2px solid rgba(237, 239, 245, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 8px rgba(255, 255, 255, 0.3);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+ 
+
+}
+
+.buttonPersonal {
+    
+    color: blue;
+    background-color: rgba(210, 225, 237, 1);
+    font-size: 1.5rem;
+    width: 85%;
+    min-width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    
+}
+
+.divBasicInformation {
+    
+    display: flex;
+    position: relative;
+    width: 60%; 
+    
+    
+}
+
+form {
+
+  display:flex;
+  position: relative;
+  width: 170%;
+  height: 45dvh; 
+ 
+
+}
+
+fieldset {
+
+  display:flex;
+  position: relative;
+  width: 70%;
+  height: 45dvh; 
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  bottom: 18px;
+   border:2px solid red;
+
+}
+
+.fieldsetInfo {
+    
+    color: rgba(228, 233, 241 , 1);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    gap: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-left: auto;
+    
+    
+}
+
+.classLegend {
+    
+    color: white;
+    font-size: 1.5rem;
+    height: 35px;
+    width: 200px;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(203, 207, 215, 0.5);
+    text-align: center;
+    align-content: center;
+    
+}
+
+.classLegendBig {
+    
+    color: white;
+    font-size: 1.5rem;
+    height: 35px;
+    width: 300px;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(203, 207, 215, 0.5);
+    text-align: center;
+    align-content: center;
+    
+}
+
+.divContainerInfo { 
+    
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;   
+    
+}
+
+.divButtonContainerInfo { 
+    
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;    
+    
+}
+
+
+.divLocationAndAddress {
+    
+    display: none;
+    position: relative;
+    width: 60%;
+         
+}
+
+.fieldsetLocationAndAddress {
+    
+    color: rgba(228, 233, 241 , 1);
+    position: relative;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    
+    
+}
+
+.divEducationAndProfession {
+    
+    display: none;
+    position: relative;
+    width: 60%;  
+    
+}
+
+.fieldsetEducationAndProfession {
+    
+    color: rgba(228, 233, 241 , 1);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    gap: 15px;
+    padding: 20px;
+    border-radius: 15px;   
+    
+}
+
+
+
+
+.labelInfo {
+    
+    font-size: 1.3rem; 
+    position: relative;
+
+}
+ 
+.inputInfo {
+    
+   display: none;
+   font-size: 1.3rem; 
+   position: relative;
+   width: 50%;
+   min-width: 300px;
+   max-width: 400px;
+   height: 30px;
+   border-radius: 8px;
+   margin-left: auto;
+   
+    
+}
+
+.inputInfoAddress {
+    
+   display: none;
+   font-size: 1.3rem; 
+   position: relative;
+   width: 50%;
+   min-width: 300px;
+   max-width: 400px;
+   height: 30px;
+   border-radius: 8px;
+   margin-left: auto;
+   
+    
+}
+
+.inputInfoEducation { 
+    
+   display: none;
+   font-size: 1.3rem; 
+   position: relative;
+   width: 50%;
+   min-width: 300px;
+   max-width: 400px;
+   height: 30px;
+   border-radius: 8px;
+   margin-left: auto;
+   
+    
+}
+
+.buttonEditInfo {
+
+  color: white; 
+  font-size: 1.2rem;
+  display:block;
+  position: relative;
+  width: 15%;
+  min-width: 100px;
+  height: 40px;
+  background-color: rgba(56, 121, 214, 1); 
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+
+.buttonSendInfo {
+
+  color: white; 
+  font-size: 1.2rem;
+  display:none;
+  position: relative;
+  width: 15%;
+  min-width: 100px;
+  height: 40px;
+  background-color: rgba(56, 121, 214, 1); 
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+
+
+.buttonEditAddress {
+
+  color: white; 
+  font-size: 1.2rem;
+  display:block;
+  position: relative;
+  width: 15%;
+  min-width: 100px;
+  height: 40px;
+  background-color: rgba(56, 121, 214, 1); 
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.buttonSendAddress {
+
+  color: white; 
+  font-size: 1.2rem;
+  display:none;
+  position: relative;
+  width: 15%;
+  min-width: 100px;
+  height: 40px;
+  background-color: rgba(56, 121, 214, 1); 
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+
+
+.buttonEditEducation {
+
+  color: white; 
+  font-size: 1.2rem;
+  display:block;
+  position: relative;
+  width: 15%;
+  min-width: 100px;
+  height: 40px;
+  background-color: rgba(56, 121, 214, 1); 
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.buttonSendEducation {
+
+  color: white; 
+  font-size: 1.2rem;
+  display:none;
+  position: relative;
+  width: 15%;
+  min-width: 100px;
+  height: 40px;
+  background-color: rgba(56, 121, 214, 1); 
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+}
+
+.buttonEditInfo:hover,
+.buttonSendInfo:hover,
+.buttonEditAddress:hover,
+.buttonSendAddress:hover,
+.buttonEditEducation:hover,
+.buttonSendEducation:hover{
+    
+    background-color: rgba(50, 105, 186, 1); 
+    transform: scale(1.1);
+    
+    
+}
+
+.buttonEditInfo:active,
+.buttonSendInfo:active,
+.buttonEditAddress:active,
+.buttonSendAddress:active,
+.buttonEditEducation:active,
+.buttonSendEducation:active{
+    
+   background-color: rgba(27, 86, 171, 1); 
+   transform: scale(0.9); 
+    
+}
+
+
+
+/**----------------------------------------------------------------------------- Album ----------------------------------------------------------------------------------------------------------------**/
+
+
+.Album {
+    
+    display: none;
+    position: relative;
+    height: 80dvh;
+    width: 100%;
+    padding: 15px; 
+    justify-content: center;    
+
+}
+
+.Album__Panel { 
+    
+    height: auto;
+    width: 80%;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    border: 2px solid rgba(237, 239, 245, 1);
+    border-radius: 15px;
+    padding: 100px;
+    box-shadow: 0px 0px 5px 5px rgba(237, 239, 245, 0.6); 
+    
+}
+
+.Album__Box {  
+    
+    height: 150px;
+    width: 150px;
+    border: 2px solid rgba(237, 239, 245, 1);   
+    border-radius: 10px;
+    
+}
+
+.label__Album {
+    
+   width: 80%;
+   border: 2px solid red;  
+    
+}
+
+.img__Album {
+    
+    
+    
+    
+}
+
+
+
+/**----------------------------------------------------------------------------- Friends ----------------------------------------------------------------------------------------------------------------**/
+
+
+.Friends {
+    
+   display: none;
+    position: relative;
+    height: 80dvh;
+    width: 100%;
+    padding: 15px; 
+    justify-content: center;    
+    border: solid red;
+    
+    
+}
+
+.Friends__Panel {
+    
+    height: auto;
+    width: 80%;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    border: 2px solid rgba(237, 239, 245, 1);
+    border-radius: 15px;
+    padding: 100px;
+    box-shadow: 0px 0px 5px 5px rgba(237, 239, 245, 0.6); 
+    
+    
+}
+
+
+
+/**-------------------------------------------------------------------- Community & Group ----------------------------------------------------------------------------------------------------------------**/
+
+
+.Community {
+    
+    display: none;
+    position: relative;
+    height: 80dvh;
+    width: 100%;
+    padding: 15px; 
+    justify-content: center;    
+    border: solid red;
+    
+}
+
+.Community__Panel {
+    
+    height: auto;
+    width: 80%;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    border-radius: 15px;
+    padding: 100px;
+    box-shadow: 0px 0px 5px 5px rgba(237, 239, 245, 0.6);   
+   
+}
+
+
+
+/**--------------------------------------------------------------------------------------- Projects ----------------------------------------------------------------------------------------------------------------**/
+
+
+.Projects {
+    
+    display: none;
+    position: relative;
+    height: 80dvh;
+    width: 100%;
+    padding: 15px; 
+    justify-content: center;    
+    
+}
+
+.Projects__Panel { 
+    
+    height: auto;
+    width: 80%;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    border-radius: 15px;
+    padding: 100px;
+    box-shadow: 0px 0px 5px 5px rgba(237, 239, 245, 0.6); 
+    
+    
+}
+
+
+
+
+/**--------------------------------------------------------------------------------------- Gaming ----------------------------------------------------------------------------------------------------------------**/
+
+
+.Gaming {
+    
+    display: flex;
+    position: relative;
+    height: 80dvh;
+    width: 100%;
+    padding: 15px; 
+    justify-content: center;  
+    
+}
+
+.Gaming__Panel { 
+    
+    height: auto;
+    width: 80%;
+    background: linear-gradient( to bottom, rgba(21, 40, 81, 1), rgba(75, 96, 140, 1), rgba(21, 40, 81, 1));
+    border-radius: 15px;
+    padding: 100px;
+    box-shadow: 0px 0px 5px 5px rgba(237, 239, 245, 0.6); 
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,449 @@
+:root {
+
+    --radius: 10px;
+    --radiusLabel: 5px;
+    --fontLabel: 1.3rem;
+    --fontA: 1.5rem;
+    --fontLegend: 1.5rem;
+    --font: 1.2rem;
+    --fontButton: 1.3rem;
+    --divH: 50px;
+
+}
+
+body {
+
+    background: linear-gradient(to right, #1a1d2e, #2c3e50, #34495e);
+
+}
+
+header {
+
+    color: rgb(255, 249, 249);
+    background-color: #405b77;
+    display: flex;
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 3px 3px rgba(255, 255, 255, 0.85);
+
+
+}
+
+.divFieldset {
+
+    display: flex;
+    position: relative;
+    width: 35%;
+    height: var(--h);
+    gap: 10px;
+    margin: 30px;
+
+}
+
+legend {
+
+    color: white;
+    font-size: var(--fontLegend);
+    background-color: #3d5d7c;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 3px rgba(255, 255, 255, 0.70);
+
+
+}
+
+form {
+
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: var(--h);
+
+}
+
+fieldset {
+
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    font-size: var(--fontLabel);
+    background: linear-gradient(to right, #2c2f4a, #3a4059);
+    flex-direction: column;
+    border-radius: var(--radius);
+    border: none;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.85);
+    gap: 20px;
+
+}
+
+label {
+
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    position: relative;
+    font-size: var(--fontLabel);
+    top: 25px;
+    margin: 10px;
+
+}
+
+
+/**------------------------------------------------------------------------------------------------------------------------------------------------------**/
+
+
+select {
+    
+    font-size: 1.1rem;
+    background: rgba(250,250,250,0.8);
+    position: relative;
+    width: 88%;
+    height: 40px;   
+    border-radius: 10px;
+    padding: 5px;
+    top: 25px;
+    left: 10px;
+    
+}
+
+.state {
+    
+    display: none;
+    
+}
+
+.province {
+    
+    display: none;
+    
+}
+
+.county {
+    
+    display: none;
+    
+}
+
+
+.accountant{
+    
+    display: none;    
+    
+}
+
+.architect {
+    
+  display: none;    
+    
+}
+
+.artist {
+    
+   display: none;   
+    
+}
+
+.chef {
+    
+   display: none; 
+    
+}
+
+.designer {
+    
+    display: none; 
+    
+}
+
+.doctor {
+    
+   display: none;  
+    
+}
+
+.electrician {
+    
+    display: none;
+    
+}
+
+.engineer {
+    
+    display: none;
+    
+}
+
+.farmer {
+    
+    display: none;
+    
+}
+
+.firefighter {
+    
+    display: none;
+    
+}
+
+.lawyer {
+    
+    display: none;
+    
+}
+
+.mechanic {
+    
+    display: none;
+    
+}
+
+.musician {
+    
+   display: none; 
+       
+}
+
+.nurse {
+    
+    display: none; 
+      
+}
+
+.pharmacist {
+    
+    display: none; 
+    
+}
+
+.photographer {
+    
+    display: none; 
+    
+}
+
+.pilot {
+    
+    display: none;
+    
+}
+
+.plumber {
+    
+    display: none;
+    
+}
+
+.policeOfficer {
+    
+    display: none;
+    
+}
+
+.programmer {
+    
+    display: none;
+    
+}
+
+.scientist {
+    
+    display: none;
+    
+}
+
+.teacher {
+    
+    display: none;
+    
+}
+
+.veterinarian {
+    
+    display: none;
+    
+}
+
+.writer {
+    
+   display: none; 
+    
+}
+
+
+
+/**----------------------------------------------------------------------------------------------------------------------------------------------------------------------**/
+
+
+
+input {
+   
+    color: #2c3e50;
+    display: flex;
+    position: relative;
+    font-size: var(--font);
+    background-color: rgba(255,255,255,0.85);
+    width: 85%;
+    height: 25px;
+    border-radius: var(--radiusLabel);
+    padding: 5px;
+    top: 25px;
+    margin: 10px;
+
+}
+
+.divHr {
+
+    position: relative;
+    display: flex;
+    width: 100%;
+
+}
+
+hr {
+
+    position: relative;
+    display: flex;
+    width: 100%;
+    top: 20px;
+
+}
+
+.divButton {
+
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: var(--divH);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.buttonRegister {
+
+    color: white;
+    display: flex;
+    position: relative;
+    width: 110px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--fontButton);
+    background-color: rgb(48, 211, 83);
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 250ms ease-in-out, transform 200ms ease;
+
+}
+
+.buttonRegister:hover {
+
+    background-color: rgb(29, 230, 73);
+    transform: scale(1.1);
+
+}
+
+.buttonRegister:active {
+
+    background-color: rgb(0, 243, 53);
+    transform: scale(1);
+
+}
+
+.buttonLogin {
+
+    color: white;
+    display: flex;
+    position: relative;
+    width: 100px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--fontButton);
+    background-color: rgb(118, 141, 235);
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 250ms ease-in-out, transform 200ms ease;
+
+}
+
+.buttonLogin:hover {
+
+    background-color: rgb(57, 90, 224);
+    transform: scale(1.1);
+
+}
+
+.buttonLogin:active {
+
+    background-color: rgb(21, 60, 214);
+    transform: scale(1);
+
+}
+
+span {
+
+ display:none;
+ position: relative;
+
+}
+
+span:hover{
+
+display:block;
+visibility: hidden;
+z-index: 1;
+
+}
+
+
+.divFooter {
+
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+
+}
+
+footer {
+
+    display: flex;
+    position: relative;
+
+}
+
+a {
+
+    font-size: var(--fontA);
+    color: #5dade2; /* azul claro elegante */
+    text-decoration: none;
+    transition: color 200ms ease;
+
+}
+
+a:hover {
+
+    color: #85c1e9; /* tono más claro al pasar el mouse */
+    text-decoration: underline;
+
+}
+
+a:active {
+
+    color: #3498db;
+
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--   <link rel="stylesheet" href="../../static/style/profile.css" type="text/css"> -->
+        <link rel="stylesheet" th:href="@{/style/profile.css}" type="text/css">
+        <title>LinkSnappy</title>
+    </head>
+    <body>
+        <div class="divHeader">
+            <header>
+                <div class="divFrontPage">
+                    <label class="labelFrontPage" for="selectFrontPage">
+                        <img class="imgFrontPage" src="h.jpg" alt>
+                    </label>
+                    <input id="selectFrontPage" type="file">
+                    <button class="selectFrontPage">Front Page</button>
+                </div>
+            </header>
+        </div>
+
+        <div class="divProfile">
+            <label class="labelProfile" for="profile">
+                <img class="imgProfile" src="h.jpg" alt>
+            </label>
+            <input id="profile" type="file">
+        </div>
+
+        <div class="divOptionalButtonsPanel">
+            <div class="divOptionalButtons">
+                <button id="personalInformation" class="optionalButtonPersonal" type="button">Personal information</button>
+                <button id="albums" class="optionalButtonAlbums" type="button">Albums</button>
+                <button id="friends" class="optionalButtonFriends" type="button">Friends</button>
+                <button id="communityAndGroup" class="optionalButtonCommunity" type="button">Community & Group</button>
+                <button id="projects" class="optionalButtonProjects" type="button">Projects</button>
+                <button id="gaming" class="optionalButtonGaming" type="button">Gaming</button>
+            </div>
+        </div>
+
+        <div class="divContainer">
+            <div class="divContainerPersonal">
+                <button id="basicInfo" class="buttonPersonal"
+                    type="button">Basic Info</button>
+                <button id="address" class="buttonPersonal"
+                    type="button">Address</button>
+                <button id="education" class="buttonPersonal"
+                    type="button">Education</button>
+            </div>
+            <div class="divBasicInformation">
+                <form>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <fieldset class="fieldsetInfo">
+                        <legend class="classLegend">Basic Information</legend>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="name">Name:</label>
+                            <input class="inputInfo" id="name" name="name"
+                                type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="lastName">Last
+                                Name:</label>
+                            <input class="inputInfo" id="lastName"
+                                name="lastName" type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="email">Email:</label>
+                            <input class="inputInfo" id="email" name="email"
+                                type="email">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo"
+                                for="birthDate">BirthDate:</label>
+                            <input class="inputInfo" id="birthDate"
+                                name="birthDate" type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="maritalState">Marital
+                                Status:</label>
+                            <input class="inputInfo" id="maritalState"
+                                name="maritalState" type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="numberPhone">Number
+                                Phone:</label>
+                            <input class="inputInfo" id="numberPhone"
+                                name="numberPhone" type="text">
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                        <div class="divButtonContainerInfo">
+                            <button id="buttonEditInfo" class="buttonEditInfo"
+                                type="button">Edit Profile</button>
+                            <button id="buttonSendInfo" class="buttonSendInfo"
+                                type="submit">Send</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="divLocationAndAddress">
+                <form>
+                    <fieldset class="fieldsetLocationAndAddress">
+                        <legend class="classLegend">Location / Address</legend>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo"
+                                for="country">Country:</label>
+                            <input class="inputInfoAddress" id="country" name="country"
+                                type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="state">State:</label>
+                            <input class="inputInfoAddress" id="state" name="state"
+                                type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo"
+                                for="county">County:</label>
+                            <input class="inputInfoAddress" id="county" name="county"
+                                type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo"
+                                for="province">Province:</label>
+                            <input class="inputInfoAddress" id="province"
+                                name="province" type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo"
+                                for="municipality">Municipality:</label>
+                            <input class="inputInfoAddress" id="municipality"
+                                name="municipality" type="text">
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                        <div class="divButtonContainerInfo">
+                            <button id="buttonEditLocation" class="buttonEditAddress"
+                                type="button">Edit Profile</button>
+                            <button id="buttonSendLocation" class="buttonSendAddress"
+                                type="submit">Send</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="divEducationAndProfession">
+                <form>
+                    <fieldset class="fieldsetEducationAndProfession">
+                        <legend class="classLegendBig">Education and Profession</legend>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="primarySchool">Primary
+                                School:</label>
+                            <input class="inputInfoEducation" id="primarySchool"
+                                name="primarySchool" type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo" for="highSchool">High
+                                School:</label>
+                            <input class="inputInfoEducation" id="highSchool"
+                                name="highSchool" type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo"
+                                for="university">University:</label>
+                            <input class="inputInfoEducation" id="university"
+                                name="university" type="text">
+                        </div>
+
+                        <div class="divContainerInfo">
+                            <label class="labelInfo"
+                                for="profession">Profession:</label>
+                            <input class="inputInfoEducation" id="profession"
+                                name="profession" type="text">
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                        <div class="divButtonContainerInfo">
+                            <button id="buttonEditEducation" class="buttonEditEducation"
+                                type="button">Edit Profile</button>
+                            <button id="buttonSendEducation" class="buttonSendEducation"
+                                type="submit">Send</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div >
+
+        <div class="Album">
+            <div class="Album__Panel">  
+                <div class="Album__Box">  
+                <label class="label__Album" ></label>
+                <img class="img__Album" src="" alt="">
+                </div>
+            </div>        
+        </div>
+        
+        <div class="Friends">
+            <div class="Friends__Panel"> 
+                <div>
+                <label></label>
+                <img src=" " alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="Community">
+            <div class="Community__Panel">
+                
+            </div>
+        </div>
+        
+        <div class="Projects">  
+            <div class="Projects__Panel">  
+                
+            </div>
+        </div>
+        
+        <div class="Gaming">
+            <div class="Gaming__Panel">
+                <div>
+                <label></label>
+                <img src=" " alt="">
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+        </footer>
+   <!--     <script src="../../static/js/profile.js"></script> -->
+        <script th:src="@{/js/profile.js}"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

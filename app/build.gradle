@@ -1,0 +1,50 @@
+
+
+plugins {
+    
+    id 'application'
+    id 'java'
+    id 'org.springframework.boot' version '3.4.4'
+    id 'io.spring.dependency-management' version '1.1.7'
+    
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web' // Spring Web
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.boot:spring-boot-starter-security' // Spring Security
+  //  implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server' // OAuth2
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // Thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA
+    implementation 'org.hibernate:hibernate-core:6.4.0.Final' // Hibernate (opcional, ya incluido en JPA Starter)
+    implementation 'mysql:mysql-connector-java:8.0.33' //sql
+
+    // JWT (JSON Web Token)
+    implementation 'io.jsonwebtoken:jjwt:0.12.6'
+    implementation 'com.google.guava:guava:32.0.1-jre' 
+   
+   testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    mainClass = 'com.red.LinkSnappy.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

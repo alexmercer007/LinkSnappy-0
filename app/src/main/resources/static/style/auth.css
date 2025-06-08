@@ -1,0 +1,204 @@
+
+
+body {
+
+    background: linear-gradient(to right, rgba(16, 0, 246,0.5),rgba(16, 0, 246,0.4),rgba(16, 0, 246,0.1));
+    position: relative;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    padding: 0%;
+    margin: 0%;
+}
+
+
+
+header {
+
+    position: relative;
+    display: flex;
+    color: white;
+    background-color: rgb(13, 55, 194);
+    justify-content: center;
+    align-items: start;
+    border-radius: 15px;
+
+}
+
+main {
+
+    position: relative;
+    display: flex;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+form {
+
+  display: flex;
+  position: relative;  
+  width: 100%;
+
+}
+
+.divFieldset {
+
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px; 
+
+    justify-content: center;
+    padding: 0%;
+    margin: 2%;
+
+}
+
+
+fieldset {
+
+    background-color: rgba(23, 33, 88, 0.7);
+    width: 100%;
+    min-width: 50%;
+    height: 100%; 
+    border-radius: 15px;
+    padding: 5%;
+
+}
+
+.divLabel {
+
+    display:flex;
+    position:relative;
+    width: 100%;
+    flex-direction: column;
+    margin: 5%;
+    
+
+}
+
+label {
+color:white;
+    font-size: 1.5em;
+
+}
+
+a {
+
+color:white;
+
+font-size: 1.2rem;
+
+}
+
+.inputName0rEmail {
+
+    position:relative;
+    width: 90%;
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 1%;
+    
+
+}
+
+.inputPassword {
+
+    position:relative;
+    width: 90%;
+    height: 2rem;
+    font-size: 1.2rem;
+    
+    border-radius: 5px;
+    padding: 1%;
+    
+
+}
+
+
+.boxCenter {
+
+ display:flex;
+ position:relative;
+ width: 100%;
+ height: 2rem;
+ flex-direction: column;
+ align-items: center;
+gap: 1.5rem;
+
+}
+
+.buttonLogin {
+
+    color:white;
+    background-color: rgba(13, 255, 85, 0.8);
+    font-size: 1.2rem;
+    width: 6em;
+    height: 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+
+
+}
+
+.buttonLogin:hover {
+
+    background-color: rgba(13, 255, 85, 1);
+    transform: scale(1.1);
+
+}
+
+.buttonLogin:active {
+
+   background-color: rgba(13, 255, 85, 0.8);
+   transform: scale(0.95);
+
+}
+
+.buttonRegister {
+
+    color:white;
+    background-color: rgba(13, 126, 255, 0.8);
+    font-size: 1.2rem;
+    width: 6em;
+    height: 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+
+}
+
+.buttonRegister:hover {
+
+background-color: rgba(13, 126, 255, 1);
+transform: scale(1.1);
+    
+}
+
+.buttonRegister:active {
+
+background-color: rgba(13, 126, 255, 0.8);
+transform: scale(0.95);
+    
+}
+
+footer {
+
+    position: relative;
+    display: flex;
+    font-size: 1.2rem;
+    height: 100vh;
+    justify-content: center;
+    align-items: end;
+    padding: 10%;
+
+}

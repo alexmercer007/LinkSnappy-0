@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkSnappy</title>
+  <!--  <link rel="stylesheet" href="../../static/style/register.css" type="text/css"> -->
+    <link rel="stylesheet" th:href="@{/style/register.css}" type="text/css">
+</head>
+
+<body>
+    <header>
+      <h1>LinkSnappy</h1>
+    </header>
+    <main>
+        <div class="divFieldset">
+            <form th:action="@{/login}" method="POST">      
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <fieldset>
+                    <legend>Register</legend>
+                    <div>
+                        <label for="name">Name:</label>
+                         <input class="" id="name" name="name" type="text" required>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name:</label>
+                         <input class="" id="lastName" name="lastName" type="text" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                         <input class="" id="email" name="email" type="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                         <input class="" id="password" name="password" placeholder="Recommended Use ! @ # $ % ^ & * in password" type="password" required>
+                    </div>
+                    <div>
+                        <label for="birthDate">BirthDate:</label>
+                         <input class="" id="birthDate" name="birthDate" type="date" required>
+                    </div>
+                    <div>
+                        <label for="country">Country:</label>
+                        <select id="country" name="country" required > 
+                            <option value="">--Please choose an country--</option>
+                            <option value="1">Estados Unidos</option>
+                            <option value="2">Canadá</option>
+                            <option value="3">México</option>
+                            <option value="4">Argentina</option>
+                            <option value="5">Brasil</option>
+                            <option value="6">Colombia</option>
+                            <option value="7">Chile</option>
+                            <option value="8">Perú</option>
+                            <option value="9">Ecuador</option>
+                            <option value="10">Uruguay</option>
+                            <option value="11">Paraguay</option>
+                            <option value="12">Bolivia</option>
+                            <option value="13">Panamá</option>
+                            <option value="14">Costa Rica</option>
+                            <option value="15">Guatemala</option>
+                            <option value="16">Honduras</option>
+                            <option value="17">El Salvador</option>
+                            <option value="18">Nicaragua</option>
+                            <option value="19">República Dominicana</option>
+                            <option value="20">Puerto Rico</option>
+                            <option value="21">España</option>
+                            <option value="22">Francia</option>
+                            <option value="23">Alemania</option>
+                            <option value="24">Italia</option>
+                            <option value="25">Portugal</option>
+                            <option value="26">Reino Unido</option>
+                            <option value="27">Irlanda</option>
+                            <option value="28">Países Bajos</option>
+                            <option value="29">Bélgica</option>
+                            <option value="30">Suiza</option>
+                            <option value="31">Austria</option>
+                            <option value="32">Suecia</option>
+                            <option value="33">Noruega</option>
+                            <option value="34">Finlandia</option>
+                            <option value="35">Dinamarca</option>
+                            <option value="36">Polonia</option>
+                            <option value="37">Hungría</option>
+                            <option value="38">Chequia</option>
+                            <option value="39">Eslovaquia</option>
+                            <option value="40">Grecia</option>
+                            <option value="41">Rumania</option>
+                            <option value="42">Bulgaria</option>
+                            <option value="43">Croacia</option>
+                            <option value="44">Serbia</option>
+                            <option value="45">Eslovenia</option>
+                            <option value="46">Estonia</option>
+                            <option value="47">Letonia</option>
+                            <option value="48">Lituania</option>
+                            <option value="49">Australia</option>
+                            <option value="50">Nueva Zelanda</option>
+                            <option value="51">Japón</option>
+                            <option value="52">Corea del Sur</option>
+                            <option value="53">India</option>
+                            <option value="54">Filipinas</option>
+                            <option value="55">Vietnam</option>
+                            <option value="56">Tailandia</option>
+                            <option value="57">Malasia</option>
+                            <option value="58">Indonesia</option>
+                            <option value="59">Singapur</option>
+                            <option value="60">Israel</option>
+                            <option value="61">Turquía</option>
+                            <option value="62">Sudáfrica</option>
+                            <option value="63">Egipto</option>
+                            <option value="64">Marruecos</option>
+                            <option value="65">Argelia</option>
+                            <option value="66">Túnez</option>
+                            <option value="67">Senegal</option>
+                            <option value="68">Nigeria</option>
+                            <option value="69">Kenia</option>
+                            <option value="70">Ghana</option>
+                            <option value="71">Namibia</option>
+                            <option value="72">Botsuana</option>
+                            <option value="73">Zambia</option>
+                            <option value="74">Ruanda</option>
+                            <option value="75">Uganda</option>
+                            <option value="76">Kazajistán</option>
+                            <option value="77">Uzbekistán</option>
+                            <option value="78">Georgia</option>
+                            <option value="79">Armenia</option>
+                            <option value="80">Azerbaiyán</option>
+                            <option value="81">Ucrania</option>
+                            <option value="82">Moldavia</option>
+                            <option value="83">Bosnia y Herzegovina</option>
+                            <option value="84">Montenegro</option>
+                            <option value="85">Albania</option>
+                            <option value="86">Kosovo</option>
+                            <option value="87">Irán</option>
+                            <option value="88">Pakistán</option>
+                            <option value="89">Bangladés</option>
+                            <option value="90">Nepal</option>
+                            <option value="91">Sri Lanka</option>
+                            <option value="92">Jordania</option>
+                            <option value="93">Líbano</option>
+                            <option value="94">Arabia Saudita</option>
+                            <option value="95">Emiratos Árabes Unidos</option>
+                            <option value="96">Qatar</option>
+                            <option value="97">Kuwait</option>
+                            <option value="98">Omán</option>
+                            <option value="99">Bahréin</option>
+                            <option value="100">Maldivas</option>
+                            <option value="101">Islas Fiyi</option>
+                            <option value="102">Papúa Nueva Guinea</option>
+                            <option value="103">Mongolia</option>
+                            <option value="104">Taiwán</option>
+                        </select>
+                    </div>
+                    <div class="state">
+                        <label for="state">State:</label>
+                        <select class="" id="state" name="state">
+                            <optgroup label="Estados Unidos">
+                            <option value="">--Please choose an state--</option>
+                            <option value="1">Alabama</option>
+                            <option value="2">Alaska</option>
+                            <option value="3">Arizona</option>
+                            <option value="4">Arkansas</option>
+                            <option value="5">California</option>
+                            <option value="6">Colorado</option>
+                            <option value="7">Connecticut</option>
+                            <option value="8">Delaware</option>
+                            <option value="9">Florida</option>
+                            <option value="10">Georgia</option>
+                            <option value="11">Hawaii</option>
+                            <option value="12">Idaho</option>
+                            <option value="13">Illinois</option>
+                            <option value="14">Indiana</option>
+                            <option value="15">Iowa</option>
+                            <option value="16">Kansas</option>
+                            <option value="17">Kentucky</option>
+                            <option value="18">Louisiana</option>
+                            <option value="19">Maine</option>
+                            <option value="20">Maryland</option>
+                            <option value="21">Massachusetts</option>
+                            <option value="22">Michigan</option>
+                            <option value="23">Minnesota</option>
+                            <option value="24">Mississippi</option>
+                            <option value="25">Missouri</option>
+                            <option value="26">Montana</option>
+                            <option value="27">Nebraska</option>
+                            <option value="28">Nevada</option>
+                            <option value="29">New Hampshire</option>
+                            <option value="30">New Jersey</option>
+                            <option value="31">New Mexico</option>
+                            <option value="32">New York</option>
+                            <option value="33">North Carolina</option>
+                            <option value="34">North Dakota</option>
+                            <option value="35">Ohio</option>
+                            <option value="36">Oklahoma</option>
+                            <option value="37">Oregon</option>
+                            <option value="38">Pennsylvania</option>
+                            <option value="39">Rhode Island</option>
+                            <option value="40">South Carolina</option>
+                            <option value="41">South Dakota</option>
+                            <option value="42">Tennessee</option>
+                            <option value="43">Texas</option>
+                            <option value="44">Utah</option>
+                            <option value="45">Vermont</option>
+                            <option value="46">Virginia</option>
+                            <option value="47">Washington</option>
+                            <option value="48">West Virginia</option>
+                            <option value="49">Wisconsin</option>
+                            <option value="50">Wyoming</option>
+                            </optgroup>
+                        </select>                        
+                    </div>
+                    <div class="province">
+                        <label for="province">Province:</label>
+                        <select class="" id="province" name="province">
+                            <optgroup label="Canadá">
+                            <option value="">--Please choose an province--</option>
+                            <option value="76">Alberta</option>
+                            <option value="77">British Columbia</option>
+                            <option value="78">Manitoba</option>
+                            <option value="79">New Brunswick</option>
+                            <option value="80">Newfoundland and Labrador</option>
+                            <option value="81">Nova Scotia</option>
+                            <option value="82">Ontario</option>
+                            <option value="83">Prince Edward Island (Isla del Príncipe Eduardo)</option>
+                            <option value="84">Quebec (Québec)</option>
+                            <option value="85">Saskatchewan</option>
+                            <option value="86">Northwest Territories (Territorios del Noroeste)</option>
+                            <option value="87">Nunavut</option>
+                            <option value="88">Yukon</option>
+                            </optgroup>
+                            <optgroup label="República Dominicana">
+                            <option value="">--Please choose an province--</option>
+                            <option value="89">Azua</option>
+                            <option value="90">Bahoruco</option>
+                            <option value="91">Barahona</option>
+                            <option value="92">Dajabón</option>
+                            <option value="93">Distrito Nacional</option>
+                            <option value="94">Duarte</option>
+                            <option value="95">Elías Piña</option>
+                            <option value="96">El Seibo</option>
+                            <option value="97">Espaillat</option>
+                            <option value="98">Hato Mayor</option>
+                            <option value="99">Hermanas Mirabal</option>
+                            <option value="100">Independencia</option>
+                            <option value="101">La Altagracia</option>
+                            <option value="102">La Romana</option>
+                            <option value="103">La Vega</option>
+                            <option value="104">María Trinidad Sánchez</option>
+                            <option value="105">Monseñor Nouel</option>
+                            <option value="106">Monte Cristi</option>
+                            <option value="107">Monte Plata</option>
+                            <option value="108">Pedernales</option>
+                            <option value="109">Peravia</option>
+                            <option value="110">Puerto Plata</option>
+                            <option value="111">Samaná</option>
+                            <option value="112">San Cristóbal</option>
+                            <option value="113">San José de Ocoa</option>
+                            <option value="114">San Juan</option>
+                            <option value="115">San Pedro de Macorís</option>
+                            <option value="116">Sánchez Ramírez</option>
+                            <option value="117">Santiago</option>
+                            <option value="118">Santiago Rodríguez</option>
+                            <option value="119">Santo Domingo</option>
+                            <option value="120">Valverde</option>
+                            </optgroup>
+                        </select>      
+                    </div>
+                    
+                    <div class="county">
+                        <label for="county">County:</label>
+                         <select class="" id="county" name="county">
+                            <optgroup label="Estados Unidos"> 
+                            <option value="">--Please choose an county--</option>
+                            <option value="51">Santa Clara County, CA</option>
+                            <option value="52">King County, WA</option>
+                            <option value="53">Travis County, TX</option>
+                            <option value="54">Fairfax County, VA</option>
+                            <option value="55">San Mateo County, CA</option>
+                            <option value="56">Multnomah County, OR</option>
+                            <option value="57">Fulton County, GA</option>
+                            <option value="58">Cook County, IL</option>
+                            <option value="59">Hennepin County, MN</option>
+                            <option value="60">Denver County, CO</option>
+                            <option value="61">Summit County, UT</option>
+                            <option value="62">Pitkin County, CO</option>
+                            <option value="63">Deschutes County, OR</option>
+                            <option value="64">Washtenaw County, MI</option>
+                            <option value="65">Tompkins County, NY</option>
+                            <option value="66">Lane County, OR</option>
+                            <option value="67">Jefferson County, WA</option>
+                            <option value="68">Garfield County, CO</option>
+                            <option value="69">Madison County, ID</option>
+                            <option value="70">Chaffee County, CO</option>
+                            </optgroup>
+                            <optgroup label="Canadá">
+                                <option value="71">Northumberland, Ontario</option>
+                                <option value="72">Lennox and Addington, Ontario</option>
+                                <option value="73">Kings, Nueva Escocia</option>
+                                <option value="74">Wellington, Ontario</option>
+                                <option value="75">Huron, Ontario</option>
+                            </optgroup>
+                        </select>      
+                    </div>
+                    <div>
+                        <label for="address">Address:</label>
+                         <input class="" id="address" name="address" placeholder="Optional" type="text">
+                    </div>
+                    
+                    <div>
+                        <label for="maritalStatus">MaritalStatus:</label>
+                        <select class="" id="maritalStatus" name="maritalStatus" >
+                            <option value="1">Single</option>
+                            <option value="2">Married</option>
+                            <option value="3">Free Union</option>
+                        </select>
+                    </div>
+                    
+                                                     <!--     Profession   -->                   
+                    
+                    <div >
+                        <label for="profession">Profession:</label>
+                        <select class="" id="profession" name="profession" >
+                            <option value="">none</option>
+                            <option value="1">Accountant</option>
+                            <option value="2">Architect</option>
+                            <option value="3">Artist</option>
+                            <option value="4">Chef</option>
+                            <option value="5">Designer</option>
+                            <option value="6">Doctor</option>
+                            <option value="7">Electrician</option>
+                            <option value="8">Engineer</option>
+                            <option value="9">Farmer</option>
+                            <option value="10">Firefighter</option>
+                            <option value="11">Lawyer</option>
+                            <option value="12">Mechanic</option>
+                            <option value="13">Musician</option>
+                            <option value="14">Nurse</option>
+                            <option value="15">Pharmacist</option>
+                            <option value="16">Photographer</option>
+                            <option value="17">Pilot</option>
+                            <option value="18">Plumber</option>
+                            <option value="19">Police Officer</option>
+                            <option value="20">Programmer</option>
+                            <option value="21">Scientist</option>
+                            <option value="22">Teacher</option>
+                            <option value="23">Veterinarian</option>
+                            <option value="24">Writer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="accountant">
+                        <label for="accountant">Accountant</label>
+                        <select id="accountant" name="accountant">
+                            <option value="">none</option>
+                            <option value="1">Financial Accounting</option>
+                            <option value="2">Management Accounting</option>
+                            <option value="3">Cost Accounting</option>
+                            <option value="4">Tax Accounting</option>
+                            <option value="5">Auditing</option>
+                            <option value="6">Forensic Accounting</option>
+                            <option value="7">Public Accounting</option>
+                            <option value="8">Government Accounting</option>
+                            <option value="9">International Accounting</option>                            
+                        </select>
+                    </div>
+                    
+                    <div class="architect">
+                        <label for="architect">Architect</label>
+                        <select id="Architect" name="architect">
+                            <option value="">none</option>
+                            <option value="10">Residential Architecture</option>
+                            <option value="11">Commercial Architecture</option>
+                            <option value="12">Industrial Architecture</option>
+                            <option value="13">Landscape Architecture</option>
+                            <option value="14">Interior Architecture</option>
+                            <option value="15">Urban Design / Urban Planning</option>
+                            <option value="16">Sustainable / Green Architecture</option>
+                            <option value="17">Restoration / Conservation Architecture</option>
+                            <option value="18">Digital Architecture</option>                            
+                        </select>
+                    </div>
+                    
+                    <div class="artist">
+                        <label for="artist">Artist</label>
+                        <select id="artist" name="artist">
+                            <option value="">none</option>
+                            <option value="19">Painter</option>
+                            <option value="20">Sculptor</option>
+                            <option value="21">Illustrator</option>
+                            <option value="22">Digital Artist</option>
+                            <option value="23">Graphic Designer</option>
+                            <option value="24">Photographer</option>
+                            <option value="25">Animator</option>
+                            <option value="26">Tattoo Artist</option>
+                            <option value="27">Calligrapher</option>
+                            <option value="28">Street Artist / Muralist</option>
+                            <option value="29">Concept Artist</option>
+                        </select>
+                    </div>
+                    
+                    <div class="">
+                        <label for="chef">Chef</label>
+                        <select id="chef" name="chef">
+                            <option value="">none</option>
+                            <option value="30">Executive Chef</option>
+                            <option value="31">Sous Chef</option>
+                            <option value="32">Pastry Chef (Pâtissier)</option>
+                            <option value="33">Sauce Chef (Saucier)</option>
+                            <option value="34">Fish Chef (Poissonnier)</option>
+                            <option value="35">Grill Chef (Grillardin)</option>
+                            <option value="36">Vegetable Chef (Entremetier)</option>
+                            <option value="37">Garde Manger (Cold Station Chef)</option>
+                            <option value="38">Butcher Chef (Boucher)</option>
+                            <option value="39">Personal Chef</option>
+                            <option value="40">Private Chef</option>
+                            <option value="41">Catering Chef</option>
+                        </select>
+                    </div>
+                    
+                    <div class="designer">
+                        <label for="designer">Designer</label>
+                        <select id="designer" name="designer">
+                            <option value="">none</option>
+                            <option value="42">Graphic Designer</option>
+                            <option value="43">Web Designer</option>
+                            <option value="44">UX Designer (User Experience Designer)</option>
+                            <option value="45">UI Designer (User Interface Designer)</option>
+                            <option value="46">Interior Designer</option>
+                            <option value="47">Fashion Designer</option>
+                            <option value="48">Industrial Designer</option>
+                            <option value="49">Product Designer</option>
+                            <option value="50">Motion Designer (Motion Graphics Designer)</option>
+                            <option value="51">Game Designer</option>
+                            <option value="52">Set Designer (Scenic Designer)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="doctor">
+                        <label for="doctor">Doctor</label>
+                        <select id="doctor" name ="doctor">
+                            <option value="">none</option>
+                            <option value="53">General Practitioner (GP) / Family Doctor</option>
+                            <option value="54">Pediatrician</option>
+                            <option value="55">Cardiologist</option>
+                            <option value="56">Neurologist</option>
+                            <option value="57">Dermatologist</option>
+                            <option value="58">Psychiatrist</option>
+                            <option value="59">Surgeon</option>
+                            <option value="60">Oncologist</option>
+                            <option value="61">Gynecologist</option>
+                            <option value="62">Ophthalmologist</option>
+                            <option value="63">Orthopedic Doctor (Orthopedist)</option>
+                            <option value="64">ENT Doctor (Otolaryngologist)</option>
+                            <option value="65">Pulmonologist</option>
+                            <option value="66">Nephrologist</option>
+                            <option value="67">Endocrinologist</option>
+                        </select>
+                    </div>
+                    
+                    <div class="electrician">
+                        <label for="electrician">Electrician</label>
+                        <select id="electrician" name="electrician">
+                            <option value="">none</option>
+                            <option value="68">Residential Electrician</option>
+                            <option value="69">Commercial Electrician</option>
+                            <option value="70">Industrial Electrician</option>
+                            <option value="71">Maintenance Electrician</option>
+                            <option value="72">Construction Electrician</option>
+                            <option value="73">Automotive Electrician</option>
+                            <option value="74">Marine Electrician</option>
+                            <option value="75">Lineman (Lineworker / Power Line Technician)</option>
+                            <option value="76">Solar Electrician (Solar Technician)</option>
+                            <option value="77">Instrumentation Electrician</option>
+                        </select>
+                    </div>
+                    
+                    <div class="engineer">
+                        <label for="engineer">Engineer</label>
+                        <select id="engineer" name="engineer">
+                            <option value="">none</option>
+                            <option value="78">Mechanical Engineer</option>
+                            <option value="79">Electrical Engineer</option>
+                            <option value="80">Civil Engineer</option>
+                            <option value="81">Software Engineer</option>
+                            <option value="82">Computer Engineer</option>
+                            <option value="83">Chemical Engineer</option>
+                            <option value="84">Environmental Engineer</option>
+                            <option value="85">Aerospace Engineer</option>
+                            <option value="86">Industrial Engineer</option>
+                            <option value="87">Structural Engineer</option>
+                            <option value="88">Biomedical Engineer</option>
+                            <option value="89">Nuclear Engineer</option>
+                            <option value="90">Petroleum Engineer</option>
+                            <option value="91">Telecommunications Engineer</option>
+                            <option value="92">Robotics Engineer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="farmer">
+                        <label for="farmer">Farmer</label>
+                        <select id="farmer" name="farmer">
+                            <option value="">none</option>
+                            <option value="93">Crop Farmer</option>
+                            <option value="94">Livestock Farmer</option>
+                            <option value="95">Poultry Farmer</option>
+                            <option value="96">Dairy Farmer</option>
+                            <option value="97">Organic Farmer</option>
+                            <option value="98">Horticulture Farmer (Horticulturist)</option>
+                            <option value="99">Aquaculture Farmer (Fish Farmer)</option>
+                            <option value="100">Apiculturist (Beekeeper)</option>
+                            <option value="101">Mixed Farmer</option>
+                            <option value="102">Tree Farmer (Forestry Farmer)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="firefighter">
+                        <label for="firefighter">Firefighter</label>
+                        <select id="firefighter" name="firefighter">
+                            <option value="">none</option>
+                            <option value="103">Structural Firefighter</option>
+                            <option value="104">Wildland Firefighter</option>
+                            <option value="105">Airport Firefighter (ARFF – Aircraft Rescue and Firefighting)</option>
+                            <option value="106">Hazmat Firefighter (Hazardous Materials Technician)</option>
+                            <option value="107">Rescue Technician / Firefighter Paramedic</option>
+                            <option value="108">Fire Inspector / Investigator</option>
+                            <option value="109">Marine Firefighter</option>
+                            <option value="110">Industrial Firefighter</option>
+                            <option value="111">Volunteer Firefighter</option>
+                            <option value="112">Urban Search and Rescue (USAR) Firefighter</option>
+                        </select>
+                    </div>
+                    
+                    <div class="lawyer">
+                        <label for="lawyer">Lawyer</label>
+                        <select id="lawyer" name="lawyer">
+                            <option value="">none</option>
+                            <option value="113">Criminal Lawyer</option>
+                            <option value="114">Civil Lawyer</option>
+                            <option value="115">Corporate Lawyer (Business Lawyer)</option>
+                            <option value="116">Family Lawyer</option>
+                            <option value="117">Immigration Lawyer</option>
+                            <option value="118">Intellectual Property Lawyer (IP Lawyer)</option>
+                            <option value="119">Tax Lawyer</option>
+                            <option value="120">Environmental Lawyer</option>
+                            <option value="121">Constitutional Lawyer</option>
+                            <option value="122">Employment/Labor Lawyer</option>
+                            <option value="123">Real Estate Lawyer (Property Lawyer)</option>
+                            <option value="124">International Lawyer</option>
+                            <option value="125">Bankruptcy Lawyer</option>
+                            <option value="126">Entertainment Lawyer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mechanic">
+                        <label for="mechanic">Mechanic</label>
+                        <select id="mechanic" name="mechanic">
+                            <option value="">none</option>
+                            <option value="127">Automotive Mechanic</option>
+                            <option value="128">Diesel Mechanic</option>
+                            <option value="129">Industrial Mechanic o Maintenance Technician</option>
+                            <option value="130">Heavy Equipment Mechanic</option>
+                            <option value="131">Aircraft Mechanic</option>
+                            <option value="132">Marine Mechanic</option>
+                            <option value="133">Motorcycle Mechanic</option>
+                            <option value="134">Bicycle Mechanic</option>
+                            <option value="135">HVAC Technician</option>
+                            <option value="136">Railroad Mechanic</option>
+                        </select>
+                    </div>
+                    
+                    <div class="musician">
+                        <label for="musician">Musician</label>
+                        <select id="musician" name="musician">
+                            <optgroup label="Instrument or Voice Type">
+                            <option value="">none</option>
+                            <option value="137">Instrumentalist</option>
+                            <option value="138">Singer or Vocalist</option>
+                            <option value="139">Conductor or Band Director</option>
+                            </optgroup>
+                            <optgroup label="Musical Style or Genre">
+                            <option value="">none</option>
+                            <option value="140">Classical Musician</option>
+                            <option value="141">Jazz Musician</option>
+                            <option value="142">Folk or Traditional Musician</option>
+                            <option value="143">Session Musician</option>
+                            <option value="144">Rock</option>
+                            <option value="145">Pop</option>
+                            <option value="146">Metal</option>
+                            <option value="147">Urban</option>
+                            <option value="148">Merengue</option>
+                            <option value="149">Bachata</option>
+                            <option value="150">Reguetón</option>
+                            </optgroup>
+                            <optgroup label="Creative or Technical Role">
+                            <option value="">none</option>
+                            <option value="151">Composer</option>
+                            <option value="152">Arranger</option>
+                            <option value="153">Music Producer</option>
+                            <option value="154">Sound Engineer</option>
+                            <option value="155">DJ or Electronic Music Producer</option>
+                            </optgroup>
+                            <optgroup label="Professional Environment">
+                            <option value="">none</option>
+                            <option value="156">Live Performer</option>
+                            <option value="157">Studio Musician</option>
+                            <option value="158">Music Educator or Teacher</option>
+                            <option value="159">Media Composer (Film, Video Games, etc.)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="nurse">
+                        <label for="nurse">Nurse</label>
+                        <select id="nurse" name="nurse">
+                            <option value="">none</option>
+                            <option value="160">General Nursing</option>
+                            <option value="161">Surgical Nursing</option>
+                            <option value="162">Intensive Care Nursing (ICU Nurse)</option>
+                            <option value="163">Pediatric Nursing</option>
+                            <option value="164">Neonatal Nursing</option>
+                            <option value="165">Geriatric Nursing</option>
+                            <option value="166">Mental Health Nursing / Psychiatric Nursing</option>
+                            <option value="167">Obstetric Nursing / Midwifery</option>
+                            <option value="168">Community Nursing</option>
+                            <option value="169">Emergency Nursing</option>
+                            <option value="170">Oncology Nursing</option>
+                            <option value="171">Nurse Anesthetist</option>
+                            <option value="172">Palliative Care Nursing</option>
+                            <option value="173">Public Health Nursing</option>
+                            <option value="174">Occupational Health Nursing</option>
+                            <option value="175">Cardiac Nursing</option>
+                            <option value="176">Nephrology Nursing (Dialysis Nurse)</option>
+                            <option value="177">Infectious Disease Nursing</option>
+                            <option value="178">Forensic Nursing</option>
+                            <option value="179">School Nursing</option>
+                            <option value="180">Flight Nurse</option>
+                            <option value="181">Military Nurse</option>
+                            <option value="182">Rehabilitation Nursing</option>
+                            <option value="183">Nurse Researcher</option>
+                            <option value="184">Home Health Nursing</option>
+                        </select>
+                    </div>
+                    
+                    <div class="pharmacist">
+                        <label for="pharmacist">Pharmacist</label>
+                        <select id="pharmacist" name="pharmacist">
+                            <option value="">none</option>
+                            <option value="185">Community Pharmacy</option>
+                            <option value="186">Hospital Pharmacy</option>
+                            <option value="187">Clinical Pharmacy</option>
+                            <option value="188">Industrial Pharmacy</option>
+                            <option value="189">Research and Development Pharmacy</option>
+                            <option value="190">Regulatory Pharmacy</option>
+                            <option value="191">Geriatric Pharmacy</option>
+                            <option value="192">Pediatric Pharmacy</option>
+                            <option value="193">Oncology Pharmacy</option>
+                            <option value="194">Nuclear Pharmacy</option>
+                            <option value="195">Veterinary Pharmacy</option>
+                            <option value="196">Pharmacogenomics</option>
+                            <option value="197">Clinical Pharmacology</option>
+                            <option value="198">Pharmacovigilance</option>
+                            <option value="199">Pharmaceutical Technology</option>
+                            <option value="200">Public Health Pharmacy</option>
+                            <option value="201">Pharmacoeconomics</option>
+                            <option value="202">Biopharmaceutics</option>
+                            <option value="203">Primary Care Pharmacy</option>
+                            <option value="204">Military Pharmacy</option>
+                            <option value="205">Clinical Pharmacokinetics</option>
+                            <option value="206">Academic Pharmacy / Pharmacy Educator</option>
+                            <option value="207">Environmental Pharmacy</option>
+                            <option value="208">Toxicological Pharmacology</option> 
+                        </select>
+                    </div>
+                    
+                    <div class="photographer">
+                        <label for="photographer">Photographer</label>
+                        <select id="photographer" name="photographer">
+                            <option value="">none</option>
+                            <option value="209">Portrait Photography</option>
+                            <option value="210">Fashion Photography</option>
+                            <option value="211">Nature Photography</option>
+                            <option value="212">Landscape Photography</option>
+                            <option value="213">Wildlife Photography</option>
+                            <option value="214">Sports Photography</option>
+                            <option value="215">Wedding Photography</option>
+                            <option value="216">Event Photography</option>
+                            <option value="217">Documentary Photography</option>
+                            <option value="218">Photojournalism</option>
+                            <option value="219">Fine Art Photography</option>
+                            <option value="220">Commercial / Advertising Photography</option>
+                            <option value="221">Food Photography</option>
+                            <option value="222">Product Photography</option>
+                            <option value="223">Architectural Photography</option>
+                            <option value="224">Interior Photography</option>
+                            <option value="225">Aerial / Drone Photography</option>
+                            <option value="226">Underwater Photography</option>
+                            <option value="227">Macro Photography</option>
+                            <option value="228">Scientific Photography</option>
+                            <option value="229">Forensic Photography</option>
+                            <option value="230">Newborn / Baby Photography</option>
+                            <option value="231">Pet Photography</option>
+                            <option value="232">Performance / Concert Photography</option>
+                            <option value="233">Street Photography</option>
+                        </select>
+                    </div>
+                    
+                    <div class="pilot">
+                        <label for="pilot">Pilot</label>
+                        <select id="pilot" name="pilot">
+                            <option value="">none</option>
+                            <option value="234">Commercial Pilot</option>
+                            <option value="235">Airline Pilot</option>
+                            <option value="236">Cargo Pilot</option>
+                            <option value="237">Helicopter Pilot</option>
+                            <option value="238">Private / Corporate Pilot</option>
+                            <option value="239">Test Pilot</option>
+                            <option value="240">Drone Pilot / UAV Pilot</option>
+                            <option value="241">Agricultural Pilot / Crop Duster</option>
+                            <option value="242">Rescue Pilot</option>
+                            <option value="243">Military Pilot</option>
+                            <option value="244">Fighter Pilot</option>
+                            <option value="245">Military Transport Pilot</option>
+                            <option value="246">Naval Aviator</option>
+                            <option value="247">Surveillance / Patrol Pilot</option>
+                            <option value="248">Firefighting Pilot</option>
+                            <option value="249">Air Ambulance Pilot / Medevac Pilot</option>
+                            <option value="250">Flight Instructor</option>
+                            <option value="251">Aerobatic Pilot / Airshow Pilot</option>
+                            <option value="252">Glider Pilot</option>
+                            <option value="253">Hot Air Balloon Pilot</option>
+                            <option value="254">Spacecraft Pilot / Astronaut</option>                          
+                        </select>
+                    </div>
+                                                     
+                       <div class="plumber">
+                        <label for="plumber">Plumber</label>
+                        <select id="plumber" name="plumber">
+                            <option value="">none</option>
+                            <option value="255">Residential Plumbing</option>
+                            <option value="256">Commercial Plumbing</option>
+                            <option value="257">Industrial Plumbing</option>
+                            <option value="258">Potable Water Systems Installer</option>
+                            <option value="259">Wastewater Systems Installer</option>
+                            <option value="260">Drainage Systems Specialist</option>
+                            <option value="261">Hydronic Heating Systems Plumber</option>
+                            <option value="262">Water Heater Technician</option>
+                            <option value="263">Gas Line Plumber / Gasfitter</option>
+                            <option value="264">Fire Sprinkler System Installer</option>
+                            <option value="265">Maintenance Plumber</option>
+                            <option value="266">New Construction Plumber</option>
+                            <option value="267">Remodeling / Renovation Plumber</option>
+                            <option value="268">Plumbing Video Inspection Technician</option>
+                            <option value="269">Backflow Prevention Specialist</option>
+                            <option value="270">Water Pump Technician</option>
+                            <option value="271">Septic System Technician</option>
+                            <option value="272">Rainwater Harvesting System Installer</option>
+                            <option value="273">Emergency Plumber</option>
+                        </select>
+                    </div>
+                                                     
+                      <div class="policeOfficer">
+                        <label for="policeOfficer">Police Officer</label>
+                        <select id="policeOfficer" name="policeOfficer">
+                            <option value="">none</option>
+                            <option value="274">Patrol Officer</option>
+                            <option value="275">Traffic Officer</option>
+                            <option value="276">K-9 Unit Officer</option>
+                            <option value="277">Detective / Investigations Officer</option>
+                            <option value="278">Homicide Detective</option>
+                            <option value="279">Forensic Officer</option>
+                            <option value="280">Cybercrime Officer</option>
+                            <option value="281">Narcotics Officer</option>
+                            <option value="282">Gang Unit Officer</option>
+                            <option value="283">Counter-Terrorism Officer</option>
+                            <option value="284">Criminal Intelligence Officer</option>
+                            <option value="285">Undercover Officer</option>
+                            <option value="286">SWAT Officer / Tactical Unit Officer</option>
+                            <option value="287">Bomb Squad / EOD Officer</option>
+                            <option value="288">Mounted Police Officer</option>
+                            <option value="289">Child Protection Officer</option>
+                            <option value="290">School Resource Officer / Campus Police</option>
+                            <option value="291">Port / Maritime Police</option>
+                            <option value="292">Railway Police Officer</option>
+                            <option value="293">Environmental Police</option>
+                            <option value="294">Border Patrol Officer</option>
+                            <option value="295">Immigration Enforcement Officer</option>
+                            <option value="296">Diplomatic Security Officer</option>
+                            <option value="297">Airport Police Officer</option>
+                            <option value="298">Police Instructor / Training Officer</option>
+                            <option value="299">Internal Affairs Officer</option>
+                            <option value="300">Military Police</option>                          
+                        </select>
+                    </div>
+                                                     
+                     <div class="programmer">
+                        <label for="programmer">Programmer</label>
+                        <select id="programmer" name="programmer">
+                            <option value="">none</option>
+                            <option value="301">Frontend Developer</option>
+                            <option value="302">Backend Developer</option>
+                            <option value="303">Fullstack Developer</option>
+                            <option value="304">Web Application Developer</option>
+                            <option value="305">Mobile App Developer</option>
+                            <option value="306">Game Developer</option>
+                            <option value="307">Embedded Systems Developer</option>
+                            <option value="308">AI Developer / Artificial Intelligence Engineer</option>
+                            <option value="309">Machine Learning Engineer</option>
+                            <option value="310">Computer Vision Developer</option>
+                            <option value="311">Robotics Programmer</option>
+                            <option value="312">VR / AR Developer</option>
+                            <option value="313">Desktop Software Developer</option>
+                            <option value="314">Database Developer</option>
+                            <option value="315">Blockchain Developer</option>
+                            <option value="316">Smart Contract Developer</option>
+                            <option value="317">Operating Systems Developer</option>
+                            <option value="318">Cybersecurity Developer</option>
+                            <option value="319">DevOps Engineer</option>
+                            <option value="320">Automation / Scripting Developer</option>
+                            <option value="321">API Developer</option>
+                            <option value="322">QA Engineer / Test Automation Developer</option>
+                            <option value="323">Data Scientist / Scientific Programmer</option>
+                            <option value="324">UI Developer</option>
+                            <option value="325">UX Developer</option>
+                            <option value="326">Cloud Developer</option>
+                            <option value="327">Fintech Developer</option>
+                            <option value="328">Indie Game Developer</option>
+                        </select>
+                    </div>
+                                                     
+                      <div class="scientist">
+                        <label for="scientist">Scientist</label>
+                        <select id="scientist" name="Scientist">
+                            <option value="">none</option>
+                            <option value="329">Physicist</option>
+                            <option value="330">Chemist</option>
+                            <option value="331">Biologist</option>
+                            <option value="332">Computer Scientist</option>
+                            <option value="333">Data Scientist</option>
+                            <option value="334">Environmental Scientist</option>
+                            <option value="335">Space Scientist / Astronomer</option>
+                            <option value="336">Marine Scientist / Oceanographer</option>
+                            <option value="337">Atmospheric Scientist / Meteorologist</option>
+                            <option value="338">Materials Scientist</option>
+                            <option value="339">Nuclear Scientist</option>
+                            <option value="340">Medical Scientist / Biomedical Scientist</option>
+                            <option value="341">Forensic Scientist</option>
+                            <option value="342">Geneticist</option>
+                            <option value="343">Neuroscientist</option>
+                            <option value="344">AI Scientist</option>
+                            <option value="345">Social Scientist</option>
+                            <option value="346">Experimental Psychologist</option>
+                            <option value="347">Agricultural Scientist</option>
+                            <option value="348">Nanotechnology Scientist</option>
+                            <option value="349">Robotics Scientist</option>
+                            <option value="350">Toxicologist</option>
+                            <option value="351">Public Health Scientist</option>
+                            <option value="352">Bioinformatics Scientist</option>
+                            <option value="353">Geologist</option>
+                            <option value="354">Archaeologist</option>
+                            <option value="355">Paleontologist</option>
+                            <option value="356">Anthropologist</option>
+                            <option value="357">Economic Scientist / Economist</option>
+                        </select>
+                    </div>
+                                                     
+                      <div class="teacher">
+                        <label for="teacher">Teacher</label>
+                        <select id="teacher" name="teacher">
+                            <option value="">none</option>
+                            <option value="358">Preschool Teacher / Early Childhood Educator</option>
+                            <option value="359">Primary School Teacher / Elementary Teacher</option>
+                            <option value="360">Secondary School Teacher / High School Teacher</option>
+                            <option value="361">University Professor / College Instructor</option>
+                            <option value="362">Vocational / Technical Education Teacher</option>
+                            <option value="363">Physical Education Teacher (PE Teacher)</option>
+                            <option value="364">Math Teacher</option>
+                            <option value="365">Science Teacher</option>
+                            <option value="366">Biology Teacher</option>
+                            <option value="367">Chemistry Teacher</option>
+                            <option value="368">Physics Teacher</option>
+                            <option value="369">History Teacher</option>
+                            <option value="370">Geography Teacher</option>
+                            <option value="371">Language and Literature Teacher</option>
+                            <option value="372">English Teacher</option>
+                            <option value="373">Foreign Language Teacher</option>
+                            <option value="374">Computer Science Teacher / IT Teacher</option>
+                            <option value="375">Art Teacher</option>
+                            <option value="376">Music Teacher</option>
+                            <option value="377">Drama Teacher / Performing Arts Teacher</option>
+                            <option value="378">Special Education Teacher</option>
+                            <option value="379">Religious Education / Ethics Teacher</option>
+                            <option value="380">Philosophy Teacher</option>
+                            <option value="381">Economics Teacher</option>
+                            <option value="382">Psychology Teacher</option>
+                            <option value="383">Sociology Teacher</option>
+                            <option value="384">Vocational Training Teacher</option>
+                            <option value="385">Environmental Education Teacher</option>
+                            <option value="386">Adult Education Teacher</option>
+                            <option value="387">Online Teacher / Virtual Instructor</option>
+                            <option value="388">Private Tutor</option>
+                        </select>
+                    </div>
+                                                     
+                     <div class="veterinarian">
+                        <label for="veterinarian">Veterinarian</label>
+                        <select id="veterinarian" name="veterinarian">
+                            <option value="">none</option>
+                            <option value="389">Small Animal Veterinarian</option>
+                            <option value="390">Large Animal Veterinarian</option>
+                            <option value="391">Exotic Animal Veterinarian</option>
+                            <option value="392">Wildlife Veterinarian</option>
+                            <option value="393">Zoo Veterinarian</option>
+                            <option value="394">Equine Veterinarian</option>
+                            <option value="395">Bovine Veterinarian</option>
+                            <option value="396">Avian Veterinarian</option>
+                            <option value="397">Swine Veterinarian</option>
+                            <option value="398">Aquatic Veterinarian</option>
+                            <option value="499">Companion Animal Veterinarian</option>
+                            <option value="400">Veterinary Surgeon</option>
+                            <option value="401">Veterinary Anesthesiologist</option>
+                            <option value="402">Veterinary Internal Medicine Specialist</option>
+                            <option value="403">Veterinary Oncologist</option>
+                            <option value="404">Veterinary Dermatologist</option>
+                            <option value="405">Veterinary Cardiologist</option>
+                            <option value="406">Veterinary Ophthalmologist</option>
+                            <option value="407">Veterinary Neurologist</option>
+                            <option value="408">Veterinary Pathologist</option>
+                            <option value="409">Veterinary Radiologist</option>
+                            <option value="410">Veterinary Reproduction Specialist</option>
+                            <option value="411">Veterinary Forensic Specialist</option>
+                            <option value="412">Public Health Veterinarian</option>
+                            <option value="413">Veterinary Epidemiologist</option>
+                            <option value="414">Animal Production Veterinarian</option>
+                            <option value="415">Animal Welfare Veterinarian</option>
+                            <option value="416">Veterinary Researcher</option>
+                            <option value="417">Veterinary Educator / Professor</option>
+                            <option value="418">Veterinary Pharmaceutical / Food Industry Specialist</option>
+                        </select>
+                    </div>
+                                                     
+                     <div class="writer">
+                        <label for="writer">Writer</label>
+                        <select id="writer" name="writer">
+                            <option value="">none</option>
+                            <option value="419">Novelist</option>
+                            <option value="420">Short Story Writer</option>
+                            <option value="421">Poet</option>
+                            <option value="422">Playwright</option>
+                            <option value="423">Screenwriter (Film)</option>
+                            <option value="424">TV Scriptwriter</option>
+                            <option value="425">Game Writer</option>
+                            <option value="426">Comic Book / Graphic Novel Writer</option>
+                            <option value="427">Essayist</option>
+                            <option value="428">Non-fiction Writer</option>
+                            <option value="429">Biographer</option>
+                            <option value="430">Technical Writer</option>
+                            <option value="431">Web Content Writer</option>
+                            <option value="432">Copywriter</option>
+                            <option value="433">SEO Writer</option>
+                            <option value="434">Creative Writer</option>
+                            <option value="435">Speechwriter</option>
+                            <option value="436">Article Writer / Columnist</option>
+                            <option value="437">Journalist / Reporter</option>
+                            <option value="438">Blogger</option>
+                            <option value="439">Academic Writer</option>
+                            <option value="440">Science Writer</option>
+                            <option value="441">Travel Writer</option>
+                            <option value="442">Food Writer</option>
+                            <option value="443">Ghostwriter</option>
+                            <option value="444">Editor / Writing Editor</option>
+                            <option value="445">Business Writer</option>
+                            <option value="446">Social Media Content Writer</option>
+                            <option value="447">Memoirist / Autobiographical Writer</option>
+                            <option value="448">Self-help / Motivational Writer</option>
+                            <option value="449">Children's Book Writer</option>
+                            <option value="450">Young Adult (YA) Writer</option>
+                        </select>
+                    </div>                                
+                    
+                    <div>
+                        <label for="primarySchool">Primary School:</label>
+                         <input class="" id="primarySchool" name="primarySchool" placeholder="Optional" type="text">
+                    </div>
+                    <div>
+                        <label for="highSchool">High School:</label>
+                         <input class="" id="highSchool" name="highSchool" placeholder="Optional" type="text">
+                    </div>
+                    <div>
+                        <label for="university">University:</label>
+                         <input class="" id="university" name="university" placeholder="Optional" type="text">
+                    </div>
+                    <div>
+                        <label for="cellPhoneNumber">Cell Phone Number:</label>
+                         <input class="" id="cellPhoneNumber" name="cellPhoneNumber" type="text" required>
+                    </div>
+                    <div class="divHr">
+                        <hr>
+                    </div>
+                    <div class="divButton">                        
+                        <button class="buttonRegister" type="submit">Register</button>
+                        <button class="buttonLogin">Login</button>
+                        <span>go to login</span>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer class="divFooter">
+         <a href="">Terms and conditions</a>
+    </footer>
+   <!-- <script src="../../static/js/register.js"></script> -->
+    <script th:src="@{/js/register.js}"></script>
+</body>
+
+</html>
