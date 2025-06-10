@@ -88,6 +88,9 @@ public class User {
  @Column(name="is_verified") 
  private boolean isVerified;
  
+ @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+  private UserRoles role; 
+ 
  
  //------------------------------------------------------------------------------ Getters -------------------------------------------------------------------------------//
  
@@ -194,6 +197,12 @@ public boolean getIsVerified(){
     
 }
 
+public UserRoles getRol(){
+         
+    return this.role;
+    
+}
+
 
 //-------------------------------------------------------------------------- Setters ------------------------------------------------------------------------------------//
 
@@ -295,7 +304,17 @@ public void setIsVerified( boolean isVerified){
     
 }
 
+public void setSol( String roles ){
+     
+  if (this.role == null) {
+      
+        this.role = new UserRoles(); // asegúrate de tener un objeto
+        
+    }
 
+    this.role.setRol(roles); // ahora sí, llama al método correctamente
+     
+ }
 
 
 
