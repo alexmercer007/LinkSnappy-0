@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -16,7 +17,7 @@ import jakarta.persistence.Table;
  */
 
 @Entity
-@Table( name = "user_roles" )
+@Table( name = "roles" )
 public class UserRoles { 
     
    
@@ -25,13 +26,13 @@ public class UserRoles {
     }
     
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String roles;
+    private String name;
       
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @MapsId  // <- le dice a Hibernate que este ID viene de user.getId() 
+    @JoinColumn(name = "id")
     private User user;
     
   
@@ -44,9 +45,15 @@ public class UserRoles {
         
     }
     
+    public void setUser(User user) {
+        
+    this.user = user;
+}
+
+    
    public String getRol(){ 
        
-     return this.roles;
+     return this.name;
        
    }
    
@@ -55,6 +62,12 @@ public class UserRoles {
        return this.user != null ? this.user.getId() : null;
            
    }
+   
+   public User getUser() {
+    
+    return user;
+    
+}
     
  
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------//

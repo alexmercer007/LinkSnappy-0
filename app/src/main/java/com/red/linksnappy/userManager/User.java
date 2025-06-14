@@ -10,11 +10,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  *
@@ -34,12 +38,15 @@ public class User {
  @GeneratedValue(strategy = GenerationType.IDENTITY)       
  private Long  id;
    
- @Column(name="usename")  
+ @Column(name="username")  
  private String userName; 
  
  @Column(name="lastname")
  private String lastName;
-   
+ 
+ @Column(name="passwordhash")
+ private String passwordHash;
+ 
  @Column(name="birthdate")
  private  LocalDate birthdate;
  
@@ -48,8 +55,18 @@ public class User {
  @Column(name="email")
  private String email;
  
- @Column(name="passwordhash")
- private String passwordHash;
+ @Column(name="primaryschool")
+ private String primarySchool;
+ 
+ @Column(name="highschool")
+ private String highSchool;
+ 
+ @Column(name="university")
+ private String university;
+ 
+ @ManyToOne
+ @JoinColumn( name = "country_id") 
+ private Country country;
  
  @Column(name="profile_picture")
  private String profilePicture;
@@ -63,14 +80,10 @@ public class User {
  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
  private Biography biography;
  
- @ManyToOne
- @JoinColumn( name = "user_id") 
- private Publication publicationId;
- 
- @ManyToOne
- @JoinColumn(name="country_id")
- private Country country; 
- 
+ // Relación uno a muchos
+    @OneToMany(mappedBy = "user")
+    private List<Publication> publications;
+    
  @ManyToOne
  @JoinColumn(name="region_id")
  private Region region; 
@@ -79,8 +92,12 @@ public class User {
  @JoinColumn(name="region_type_id")
  private RegionType regionType; 
  
+ @ManyToOne
+ @JoinColumn(name="profession")
+ private Profession profession; 
+
  @Column(name="created_at")
- private LocalDate createdAt;
+ private LocalDateTime createdAt; 
  
  @Column(name="is_active")
   private boolean isActive; 
@@ -118,6 +135,12 @@ public LocalDate getBirthdate(){
     
 }
 
+public Country getCountry(){
+    
+    return this.country;
+    
+}
+
 public Biography getBiography() {
         
     return biography;
@@ -127,6 +150,24 @@ public Biography getBiography() {
 public String getEmail(){
 
     return this.email;
+    
+}
+
+public String getPrimaySchool(){
+
+    return this.primarySchool;
+    
+}
+
+public String gethighSchool(){
+
+    return this.highSchool;
+    
+}
+
+public String getUniversity(){
+
+    return this.university;
     
 }
 
@@ -154,17 +195,12 @@ public MaritalStatus getMaritalStatus(){
     
 }
 
-public Publication getPublicationId(){
+public List<Publication> getPublications(){
     
-    return this.publicationId;
+    return this.publications;
     
 }
 
-public Country getCountry(){
-    
-    return this.country;
-    
-}
 
 public Region getRegionId(){
     
@@ -179,7 +215,7 @@ public RegionType getRegionTypeId(){
 }
 
 
-public LocalDate getCreatedAt(){
+public LocalDateTime getCreatedAt(){
     
     return this.createdAt;
     
@@ -197,9 +233,9 @@ public boolean getIsVerified(){
     
 }
 
-public UserRoles getRol(){
-         
-    return this.role;
+public UserRoles getRole() {
+    
+    return role;
     
 }
 
@@ -225,6 +261,12 @@ public void setBirthdate( LocalDate birthDate){
     
 }
 
+public void setCountry( Country country){
+    
+    this.country = country;
+    
+}
+
 public void setBiography(Biography biography) {
         
     this.biography = biography;        
@@ -238,10 +280,36 @@ public void setEmail( String email){
     
 }
 
-public void setPasswordHash( String passwordHash){
+public void setPrimaySchool( String primarySchool ){
 
-   this.passwordHash = passwordHash;
+    this.primarySchool = primarySchool;
+    
+}
 
+public void setHighSchool( String highSchool){
+
+     this.highSchool = highSchool;
+    
+}
+
+public void setUniversity( String university){
+
+     this.university = university;
+    
+}
+
+public void setPasswordHash(String passwordHash) {
+    // Verifica si ya está codificada (opcional)
+    if (passwordHash != null && !passwordHash.startsWith("$2a$")) {
+        
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        
+        this.passwordHash = encoder.encode(passwordHash);
+        
+    } else {
+        
+        this.passwordHash = passwordHash;
+    }
 }
 
 public void setProfilePicture( String profilePicture){
@@ -262,18 +330,6 @@ public void setMaritalStatusId( MaritalStatus maritalStatus ){
     
 }
 
-public void setPublicationId( Publication publicationId ){
-    
-   this.publicationId = publicationId; 
-    
-}
-
-public void getCountry( Country country ){
-    
-    this.country = country;
-    
-}
-
 public void setRegionId( Region regionId){
     
      this.region = regionId;
@@ -286,7 +342,19 @@ public void setRegionTypeId( RegionType regionTypeId){
     
 }
 
-public void setCreatedAt( LocalDate createdAt ){
+public void setProfessionId( Long professionId){
+    
+     this.profession.setId(professionId); 
+    
+}
+
+public void setProfession( Profession profession){
+    
+     this.profession = profession;
+    
+}
+
+public void setCreatedAt( LocalDateTime createdAt ){
     
     this.createdAt = createdAt;
     
@@ -304,18 +372,16 @@ public void setIsVerified( boolean isVerified){
     
 }
 
-public void setSol( String roles ){
-     
-  if (this.role == null) {
-      
-        this.role = new UserRoles(); // asegúrate de tener un objeto
+public void setRole(UserRoles role) {
+    
+    this.role = role;
+    
+    if (role != null) {
+        
+        role.setUser(this);  // sincroniza el lado inverso de la relación
         
     }
-
-    this.role.setRol(roles); // ahora sí, llama al método correctamente
-     
- }
-
+}
 
 
 

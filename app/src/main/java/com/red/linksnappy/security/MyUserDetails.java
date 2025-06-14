@@ -5,7 +5,6 @@ package com.red.linksnappy.security;
 import com.red.linksnappy.userManager.User;
 import java.util.Collection;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +15,14 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public class MyUserDetails implements UserDetails {
     
-    private User user;
+    private User user; 
+    private String role = "ROLE_USER";   
+    
+    public MyUserDetails(User user) {
+        
+    this.user = user;
+    
+}
     
 
     @Override

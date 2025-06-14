@@ -1,6 +1,7 @@
 
 package com.red.linksnappy.userManager;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -42,10 +43,15 @@ public class Messages {
     @JoinColumn(name = "receiver_id")
     private User receiver;   
     
+    @Column(name = "sent_at")
     private LocalDateTime sentAt;
     
+   
+    @Column(name = "delivered_at")
     private LocalDateTime deliveredAt;
     
+ 
+    @Column(name = "read_at")
     private LocalDateTime readAt; // cuándo fue leído
 
     

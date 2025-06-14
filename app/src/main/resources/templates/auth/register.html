@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>LinkSnappy</title>
-  <!--  <link rel="stylesheet" href="../../static/style/register.css" type="text/css"> -->
-    <link rel="stylesheet" th:href="@{/style/register.css}" type="text/css">
+  <!-- <link rel="stylesheet" href="../../static/style/register.css" type="text/css"> -->
+   <link rel="stylesheet" th:href="@{/style/register.css}" type="text/css"> 
 </head>
 
 <body>
@@ -15,13 +15,13 @@
     </header>
     <main>
         <div class="divFieldset">
-            <form th:action="@{/login}" method="POST">      
+            <form th:action="@{/register}" method="POST">      
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                 <fieldset>
                     <legend>Register</legend>
                     <div>
                         <label for="name">Name:</label>
-                         <input class="" id="name" name="name" type="text" required>
+                         <input class="" id="name" name="name" autocomplete="name" type="text" required>
                     </div>
                     <div>
                         <label for="lastName">Last Name:</label>
@@ -41,8 +41,8 @@
                     </div>
                     <div>
                         <label for="country">Country:</label>
-                        <select id="country" name="country" required > 
-                            <option value="">--Please choose an country--</option>
+                        <select id="country" name="countryRaw"  > 
+                            <option value="0">--Please choose an country--</option>
                             <option value="1">Estados Unidos</option>
                             <option value="2">Canadá</option>
                             <option value="3">México</option>
@@ -151,9 +151,9 @@
                     </div>
                     <div class="state">
                         <label for="state">State:</label>
-                        <select class="" id="state" name="state">
+                        <select class="" id="state" name="stateRaw">
                             <optgroup label="Estados Unidos">
-                            <option value="">--Please choose an state--</option>
+                            <option value="0">--Please choose an state--</option>
                             <option value="1">Alabama</option>
                             <option value="2">Alaska</option>
                             <option value="3">Arizona</option>
@@ -209,9 +209,9 @@
                     </div>
                     <div class="province">
                         <label for="province">Province:</label>
-                        <select class="" id="province" name="province">
+                        <select class="" id="province" name="provinceRaw">
                             <optgroup label="Canadá">
-                            <option value="">--Please choose an province--</option>
+                            <option value="0">--Please choose an province--</option>
                             <option value="76">Alberta</option>
                             <option value="77">British Columbia</option>
                             <option value="78">Manitoba</option>
@@ -227,7 +227,7 @@
                             <option value="88">Yukon</option>
                             </optgroup>
                             <optgroup label="República Dominicana">
-                            <option value="">--Please choose an province--</option>
+                            <option value="0">--Please choose an province--</option>
                             <option value="89">Azua</option>
                             <option value="90">Bahoruco</option>
                             <option value="91">Barahona</option>
@@ -266,9 +266,9 @@
                     
                     <div class="county">
                         <label for="county">County:</label>
-                         <select class="" id="county" name="county">
+                         <select class="0" id="county" name="countyRaw">
                             <optgroup label="Estados Unidos"> 
-                            <option value="">--Please choose an county--</option>
+                            <option value="0">--Please choose an county--</option>
                             <option value="51">Santa Clara County, CA</option>
                             <option value="52">King County, WA</option>
                             <option value="53">Travis County, TX</option>
@@ -306,7 +306,7 @@
                     
                     <div>
                         <label for="maritalStatus">MaritalStatus:</label>
-                        <select class="" id="maritalStatus" name="maritalStatus" >
+                        <select class="" id="maritalStatus" name="maritalStatusRaw" >
                             <option value="1">Single</option>
                             <option value="2">Married</option>
                             <option value="3">Free Union</option>
@@ -317,8 +317,8 @@
                     
                     <div >
                         <label for="profession">Profession:</label>
-                        <select class="" id="profession" name="profession" >
-                            <option value="">none</option>
+                        <select  id="profession" name="professionRaw" >
+                            <option value="0">none</option>
                             <option value="1">Accountant</option>
                             <option value="2">Architect</option>
                             <option value="3">Artist</option>
@@ -349,7 +349,7 @@
                     <div class="accountant">
                         <label for="accountant">Accountant</label>
                         <select id="accountant" name="accountant">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="1">Financial Accounting</option>
                             <option value="2">Management Accounting</option>
                             <option value="3">Cost Accounting</option>
@@ -364,8 +364,8 @@
                     
                     <div class="architect">
                         <label for="architect">Architect</label>
-                        <select id="Architect" name="architect">
-                            <option value="">none</option>
+                        <select id="architect" name="architect">
+                            <option value="0">none</option>
                             <option value="10">Residential Architecture</option>
                             <option value="11">Commercial Architecture</option>
                             <option value="12">Industrial Architecture</option>
@@ -381,7 +381,7 @@
                     <div class="artist">
                         <label for="artist">Artist</label>
                         <select id="artist" name="artist">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="19">Painter</option>
                             <option value="20">Sculptor</option>
                             <option value="21">Illustrator</option>
@@ -396,10 +396,10 @@
                         </select>
                     </div>
                     
-                    <div class="">
+                    <div class="chef">
                         <label for="chef">Chef</label>
                         <select id="chef" name="chef">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="30">Executive Chef</option>
                             <option value="31">Sous Chef</option>
                             <option value="32">Pastry Chef (Pâtissier)</option>
@@ -418,7 +418,7 @@
                     <div class="designer">
                         <label for="designer">Designer</label>
                         <select id="designer" name="designer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="42">Graphic Designer</option>
                             <option value="43">Web Designer</option>
                             <option value="44">UX Designer (User Experience Designer)</option>
@@ -436,7 +436,7 @@
                     <div class="doctor">
                         <label for="doctor">Doctor</label>
                         <select id="doctor" name ="doctor">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="53">General Practitioner (GP) / Family Doctor</option>
                             <option value="54">Pediatrician</option>
                             <option value="55">Cardiologist</option>
@@ -458,7 +458,7 @@
                     <div class="electrician">
                         <label for="electrician">Electrician</label>
                         <select id="electrician" name="electrician">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="68">Residential Electrician</option>
                             <option value="69">Commercial Electrician</option>
                             <option value="70">Industrial Electrician</option>
@@ -475,7 +475,7 @@
                     <div class="engineer">
                         <label for="engineer">Engineer</label>
                         <select id="engineer" name="engineer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="78">Mechanical Engineer</option>
                             <option value="79">Electrical Engineer</option>
                             <option value="80">Civil Engineer</option>
@@ -497,7 +497,7 @@
                     <div class="farmer">
                         <label for="farmer">Farmer</label>
                         <select id="farmer" name="farmer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="93">Crop Farmer</option>
                             <option value="94">Livestock Farmer</option>
                             <option value="95">Poultry Farmer</option>
@@ -514,7 +514,7 @@
                     <div class="firefighter">
                         <label for="firefighter">Firefighter</label>
                         <select id="firefighter" name="firefighter">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="103">Structural Firefighter</option>
                             <option value="104">Wildland Firefighter</option>
                             <option value="105">Airport Firefighter (ARFF – Aircraft Rescue and Firefighting)</option>
@@ -531,7 +531,7 @@
                     <div class="lawyer">
                         <label for="lawyer">Lawyer</label>
                         <select id="lawyer" name="lawyer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="113">Criminal Lawyer</option>
                             <option value="114">Civil Lawyer</option>
                             <option value="115">Corporate Lawyer (Business Lawyer)</option>
@@ -552,7 +552,7 @@
                     <div class="mechanic">
                         <label for="mechanic">Mechanic</label>
                         <select id="mechanic" name="mechanic">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="127">Automotive Mechanic</option>
                             <option value="128">Diesel Mechanic</option>
                             <option value="129">Industrial Mechanic o Maintenance Technician</option>
@@ -570,7 +570,7 @@
                         <label for="musician">Musician</label>
                         <select id="musician" name="musician">
                             <optgroup label="Instrument or Voice Type">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="137">Instrumentalist</option>
                             <option value="138">Singer or Vocalist</option>
                             <option value="139">Conductor or Band Director</option>
@@ -590,7 +590,7 @@
                             <option value="150">Reguetón</option>
                             </optgroup>
                             <optgroup label="Creative or Technical Role">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="151">Composer</option>
                             <option value="152">Arranger</option>
                             <option value="153">Music Producer</option>
@@ -598,7 +598,7 @@
                             <option value="155">DJ or Electronic Music Producer</option>
                             </optgroup>
                             <optgroup label="Professional Environment">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="156">Live Performer</option>
                             <option value="157">Studio Musician</option>
                             <option value="158">Music Educator or Teacher</option>
@@ -610,7 +610,7 @@
                     <div class="nurse">
                         <label for="nurse">Nurse</label>
                         <select id="nurse" name="nurse">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="160">General Nursing</option>
                             <option value="161">Surgical Nursing</option>
                             <option value="162">Intensive Care Nursing (ICU Nurse)</option>
@@ -642,7 +642,7 @@
                     <div class="pharmacist">
                         <label for="pharmacist">Pharmacist</label>
                         <select id="pharmacist" name="pharmacist">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="185">Community Pharmacy</option>
                             <option value="186">Hospital Pharmacy</option>
                             <option value="187">Clinical Pharmacy</option>
@@ -673,7 +673,7 @@
                     <div class="photographer">
                         <label for="photographer">Photographer</label>
                         <select id="photographer" name="photographer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="209">Portrait Photography</option>
                             <option value="210">Fashion Photography</option>
                             <option value="211">Nature Photography</option>
@@ -705,7 +705,7 @@
                     <div class="pilot">
                         <label for="pilot">Pilot</label>
                         <select id="pilot" name="pilot">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="234">Commercial Pilot</option>
                             <option value="235">Airline Pilot</option>
                             <option value="236">Cargo Pilot</option>
@@ -733,7 +733,7 @@
                        <div class="plumber">
                         <label for="plumber">Plumber</label>
                         <select id="plumber" name="plumber">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="255">Residential Plumbing</option>
                             <option value="256">Commercial Plumbing</option>
                             <option value="257">Industrial Plumbing</option>
@@ -759,7 +759,7 @@
                       <div class="policeOfficer">
                         <label for="policeOfficer">Police Officer</label>
                         <select id="policeOfficer" name="policeOfficer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="274">Patrol Officer</option>
                             <option value="275">Traffic Officer</option>
                             <option value="276">K-9 Unit Officer</option>
@@ -793,7 +793,7 @@
                      <div class="programmer">
                         <label for="programmer">Programmer</label>
                         <select id="programmer" name="programmer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="301">Frontend Developer</option>
                             <option value="302">Backend Developer</option>
                             <option value="303">Fullstack Developer</option>
@@ -828,7 +828,7 @@
                       <div class="scientist">
                         <label for="scientist">Scientist</label>
                         <select id="scientist" name="Scientist">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="329">Physicist</option>
                             <option value="330">Chemist</option>
                             <option value="331">Biologist</option>
@@ -864,7 +864,7 @@
                       <div class="teacher">
                         <label for="teacher">Teacher</label>
                         <select id="teacher" name="teacher">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="358">Preschool Teacher / Early Childhood Educator</option>
                             <option value="359">Primary School Teacher / Elementary Teacher</option>
                             <option value="360">Secondary School Teacher / High School Teacher</option>
@@ -902,7 +902,7 @@
                      <div class="veterinarian">
                         <label for="veterinarian">Veterinarian</label>
                         <select id="veterinarian" name="veterinarian">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="389">Small Animal Veterinarian</option>
                             <option value="390">Large Animal Veterinarian</option>
                             <option value="391">Exotic Animal Veterinarian</option>
@@ -939,7 +939,7 @@
                      <div class="writer">
                         <label for="writer">Writer</label>
                         <select id="writer" name="writer">
-                            <option value="">none</option>
+                            <option value="0">none</option>
                             <option value="419">Novelist</option>
                             <option value="420">Short Story Writer</option>
                             <option value="421">Poet</option>
@@ -1006,8 +1006,8 @@
     <footer class="divFooter">
          <a href="">Terms and conditions</a>
     </footer>
-   <!-- <script src="../../static/js/register.js"></script> -->
-    <script th:src="@{/js/register.js}"></script>
+  <!--  <script src="../../static/js/register.js"></script> -->
+    <script th:src="@{/js/register.js}"></script> 
 </body>
 
 </html>

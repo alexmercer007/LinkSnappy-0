@@ -36,10 +36,11 @@ header {
 
     display: flex;
     position: relative;
-    width: 35%;
+    width: 100%;
     height: var(--h);
     gap: 10px;
-    margin: 30px;
+    justify-content: center;
+    top: 40px;
 
 }
 
@@ -54,14 +55,14 @@ legend {
     border-radius: 5px;
     box-shadow: 0px 0px 3px 3px rgba(255, 255, 255, 0.70);
 
-
 }
 
 form {
 
     display: flex;
     position: relative;
-    width: 100%;
+    width: 25%;
+    min-width: 200px;
     height: var(--h);
 
 }
@@ -71,6 +72,7 @@ fieldset {
     display: flex;
     position: relative;
     width: 100%;
+    min-width: 200px;
     height: auto;
     font-size: var(--fontLabel);
     background: linear-gradient(to right, #2c2f4a, #3a4059);
@@ -78,7 +80,7 @@ fieldset {
     border-radius: var(--radius);
     border: none;
     box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.85);
-    gap: 20px;
+    gap: 10px;
 
 }
 
@@ -130,7 +132,8 @@ select {
 }
 
 
-.accountant{
+
+.accountant {
     
     display: none;    
     

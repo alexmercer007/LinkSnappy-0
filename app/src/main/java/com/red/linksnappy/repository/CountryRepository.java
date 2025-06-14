@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface  CountryRepository extends JpaRepository<Country, Long> {
     
-    Optional<Country> findByCountryId( Long countryId);
+    Optional<Country> findById( Long Id);
     
     Optional<Country> findByCountry( String country);
     

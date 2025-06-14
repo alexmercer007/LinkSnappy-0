@@ -50,7 +50,7 @@ public class UserControllerGet {
     public String feed(){
         
         
-        return"auth/feed";
+        return"feed/feed";
         
     }
     

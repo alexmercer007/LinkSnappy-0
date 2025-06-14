@@ -60,10 +60,17 @@ public class Country {
 //---------------------------------------------------------------------------- Setters ---------------------------------------------------------------------//
 
 
+ public void setCountryId(Long countryId){
+    
+    this.countryId = countryId;
+       
+}  
+ 
 public void setCountry(String country){
     
     this.country = country;
        
 }  
+
     
 }

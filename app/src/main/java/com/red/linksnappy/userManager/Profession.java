@@ -58,6 +58,12 @@ public class Profession {
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
  
  
+ public void setId( Long Id) {
+     
+    this.id = Id;
+     
+ }
+ 
  public void setTypeId( byte typeId) {
      
     this.typeId = typeId;

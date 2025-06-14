@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface RegionRepository extends JpaRepository<Region,Long> {
     
+    
     Optional<Region> findByName( String name ); 
     Optional<Region> findByTypeId( Byte typeid ); 
     Optional<Region> findByCountryId( Long countryid ); 

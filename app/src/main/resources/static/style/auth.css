@@ -104,7 +104,7 @@ font-size: 1.2rem;
     font-size: 1.2rem;
     border-radius: 5px;
     padding: 1%;
-    
+    background-color: rgba(220, 222, 235, 1);
 
 }
 
@@ -117,7 +117,7 @@ font-size: 1.2rem;
     
     border-radius: 5px;
     padding: 1%;
-    
+    background-color: rgba(220, 222, 235, 1);
 
 }
 
@@ -191,6 +191,19 @@ transform: scale(0.95);
     
 }
 
+a {
+    
+    
+    
+}
+
+a:hover{
+    
+    
+     color: rgba(220, 222, 235, 1);
+    
+}
+
 footer {
 
     position: relative;
@@ -202,3 +215,4 @@ footer {
     padding: 10%;
 
 }
+
