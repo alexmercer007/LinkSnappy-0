@@ -4,18 +4,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="../../static/style/setting.css" type="text/css"/> -->
+    <link rel="stylesheet" th:href="@{/style/setting.css}" type="text/css"> 
+    <title>setting</title>
 </head>
 
 <body>
     <header>
-
     </header>
-    <main>
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-
-    </main>
+    <div class="container-box"> 
+        <aside class="container-box__aside">
+            <fieldset>
+                
+            </fieldset>
+        </aside>
+        <main>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        </main>
+    </div>
     <footer>
-
     </footer>
 </body>
 

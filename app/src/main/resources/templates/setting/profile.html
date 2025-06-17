@@ -54,52 +54,42 @@
                         <legend class="classLegend">Basic Information</legend>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="name">Name:</label>
+                            <label class="labelInfo" for="name">Name: <span th:text="${username}"></label>
                             <input class="inputInfo" id="name" name="name"
                                 type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="lastName">Last
-                                Name:</label>
-                            <input class="inputInfo" id="lastName"
-                                name="lastName" type="text">
+                            <label class="labelInfo" for="lastName">Last Name: <span th:text="${lastname}"></span> </label>
+                            <input class="inputInfo" id="lastName" name="lastName" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="email">Email:</label>
+                            <label class="labelInfo" for="email">Email: <span th:text="${email}"></span> </label>
                             <input class="inputInfo" id="email" name="email"
                                 type="email">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo"
-                                for="birthDate">BirthDate:</label>
-                            <input class="inputInfo" id="birthDate"
-                                name="birthDate" type="text">
+                            <label class="labelInfo" for="birthDate">BirthDate: <span th:text="${birthDate}"></span></label>
+                            <input class="inputInfo" id="birthDate" name="birthDate" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="maritalState">Marital
-                                Status:</label>
-                            <input class="inputInfo" id="maritalState"
-                                name="maritalState" type="text">
+                            <label class="labelInfo" for="maritalState">Marital Status: <span th:text="${maritalStatus}"></span></label>
+                            <input class="inputInfo" id="maritalState" name="maritalState" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="numberPhone">Number
-                                Phone:</label>
-                            <input class="inputInfo" id="numberPhone"
-                                name="numberPhone" type="text">
+                            <label class="labelInfo" for="numberPhone">Number Phone: <span th:text="${numberPhone}"></span></label>
+                            <input class="inputInfo" id="numberPhone" name="numberPhone" type="text">
                         </div>
                         <div>
                             <hr>
                         </div>
                         <div class="divButtonContainerInfo">
-                            <button id="buttonEditInfo" class="buttonEditInfo"
-                                type="button">Edit Profile</button>
-                            <button id="buttonSendInfo" class="buttonSendInfo"
-                                type="submit">Send</button>
+                            <button id="buttonEditInfo" class="buttonEditInfo" type="button">Edit Profile</button>
+                            <button id="buttonSendInfo" class="buttonSendInfo" type="submit">Send</button>
                         </div>
                     </fieldset>
                 </form>
@@ -111,46 +101,35 @@
                         <legend class="classLegend">Location / Address</legend>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo"
-                                for="country">Country:</label>
-                            <input class="inputInfoAddress" id="country" name="country"
-                                type="text">
+                            <label class="labelInfo" for="country">Country: <span th:text="${country}"></span></label>
+                            <input class="inputInfoAddress" id="country" name="country" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="state">State:</label>
-                            <input class="inputInfoAddress" id="state" name="state"
-                                type="text">
+                            <label class="labelInfo" for="state">State: <span th:text="${state}"></span></label>
+                            <input class="inputInfoAddress" id="state" name="state" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo"
-                                for="county">County:</label>
-                            <input class="inputInfoAddress" id="county" name="county"
-                                type="text">
+                            <label class="labelInfo" for="county">County: <span th:text="${county}"></span></label>
+                            <input class="inputInfoAddress" id="county" name="county" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo"
-                                for="province">Province:</label>
-                            <input class="inputInfoAddress" id="province"
-                                name="province" type="text">
+                            <label class="labelInfo" for="province">Province: <span th:text="${province}"></span></label>
+                            <input class="inputInfoAddress" id="province" name="province" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo"
-                                for="municipality">Municipality:</label>
-                            <input class="inputInfoAddress" id="municipality"
-                                name="municipality" type="text">
+                            <label class="labelInfo" for="municipality">Municipality:</label>
+                            <input class="inputInfoAddress" id="municipality" name="municipality" type="text">
                         </div>
                         <div>
                             <hr>
                         </div>
                         <div class="divButtonContainerInfo">
-                            <button id="buttonEditLocation" class="buttonEditAddress"
-                                type="button">Edit Profile</button>
-                            <button id="buttonSendLocation" class="buttonSendAddress"
-                                type="submit">Send</button>
+                            <button id="buttonEditLocation" class="buttonEditAddress" type="button">Edit Profile</button>
+                            <button id="buttonSendLocation" class="buttonSendAddress" type="submit">Send</button>
                         </div>
                     </fieldset>
                 </form>
@@ -162,40 +141,30 @@
                         <legend class="classLegendBig">Education and Profession</legend>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="primarySchool">Primary
-                                School:</label>
-                            <input class="inputInfoEducation" id="primarySchool"
-                                name="primarySchool" type="text">
+                            <label class="labelInfo" for="primarySchool">Primary School: <span th:text="${primarySchool}"></span></label>
+                            <input class="inputInfoEducation" id="primarySchool" name="primarySchool" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo" for="highSchool">High
-                                School:</label>
-                            <input class="inputInfoEducation" id="highSchool"
-                                name="highSchool" type="text">
+                            <label class="labelInfo" for="highSchool">High School: <span th:text="${highSchool}"></span></label>
+                            <input class="inputInfoEducation" id="highSchool" name="highSchool" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo"
-                                for="university">University:</label>
-                            <input class="inputInfoEducation" id="university"
-                                name="university" type="text">
+                            <label class="labelInfo" for="university">University: <span th:text="${university}"></span></label>
+                            <input class="inputInfoEducation" id="university" name="university" type="text">
                         </div>
 
                         <div class="divContainerInfo">
-                            <label class="labelInfo"
-                                for="profession">Profession:</label>
-                            <input class="inputInfoEducation" id="profession"
-                                name="profession" type="text">
+                            <label class="labelInfo" for="profession">Profession: <span th:text="${profession}"></span></label>
+                            <input class="inputInfoEducation" id="profession" name="profession" type="text">
                         </div>
                         <div>
                             <hr>
                         </div>
                         <div class="divButtonContainerInfo">
-                            <button id="buttonEditEducation" class="buttonEditEducation"
-                                type="button">Edit Profile</button>
-                            <button id="buttonSendEducation" class="buttonSendEducation"
-                                type="submit">Send</button>
+                            <button id="buttonEditEducation" class="buttonEditEducation" type="button">Edit Profile</button>
+                            <button id="buttonSendEducation" class="buttonSendEducation" type="submit">Send</button>
                         </div>
                     </fieldset>
                 </form>

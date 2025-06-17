@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/style/feed.css" type="text/css"/>
+ <!--   <link rel="stylesheet" href="../../static/style/feed.css" type="text/css"/> -->
+    <link rel="stylesheet" th:href="@{/style/feed.css}" type="text/css"> 
     <title>LinkSnappy</title>
 </head>
 
@@ -74,12 +75,14 @@
                 <button class="profile__button">
                     <img class="profile__image" src="" alt="">
                 </button>
-                <p ><strong class="user-name__size">Alejandro Reyes Castillo</strong></p>
+                <p ><strong class="user-name__size"><span th:text="${username}"></span></strong></p>
                 </div>  
                 <div class="panel-profile__actions">
-                <button class="user-Options">View Profile</button>
-                <button class="user-Options">Setting</button>
-                <button class="user-Options">Log Out</button>
+                    <a th:href="@{/profile}" class="user-Options">View Profile</a>
+                    <a th:href="@{/setting}" class="user-Options">Setting</a>
+                    <form class="box-form__button" th:action="@{/logout}" method="post" >
+                        <button class="user-Options_logout" type="submit">Log Out</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -121,7 +124,8 @@
     <footer>
 
     </footer>
-    <script src="../../static/js/feed.js"> </script>
+<!--   <script src="../../static/js/feed.js"> </script>  -->
+    <script th:src="@{/js/feed.js}"></script> 
 </body>
 
 </html>

@@ -18,6 +18,8 @@ import com.red.linksnappy.userManager.Region;
 import com.red.linksnappy.userManager.RegionType;
 import com.red.linksnappy.userManager.User;
 import com.red.linksnappy.userManager.UserRoles;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -30,6 +32,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,29 +74,42 @@ public class userControllerPost {
     private AuthenticationManager authenticationManager;
   
     
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestParam String email, @RequestParam String password) {
-    
-        try {
-        // Creamos el token con el usuario y contraseña
-        UsernamePasswordAuthenticationToken authRequest =  new UsernamePasswordAuthenticationToken(email, password);
+@PostMapping("/login")
+public String login(@RequestParam String email, @RequestParam String password, HttpServletRequest request) { 
+    // Buscar usuario por email
+    Optional<User> optionalUser = userRepository.findByEmail(email);
 
-        // Autenticamos el token (Spring verifica todo)
+    if (optionalUser.isEmpty()) {
+        return "Login fallido: email no registrado";
+    }
+
+    // Obtener el username desde el usuario encontrado
+    String username = optionalUser.get().getUserName();
+
+    try {
+        // Crear el token con username y password
+        UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
+
+        // Autenticar con Spring Security
         Authentication authentication = authenticationManager.authenticate(authRequest);
 
-        // Colocamos al usuario autenticado en el contexto de seguridad
+        // Guardar la autenticación en el contexto de seguridad
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
-        return ResponseEntity.ok("Login exitoso");
-  
-        } catch (AuthenticationException ex) {
         
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login fallido: " + ex.getMessage());
-            
+        HttpSession session = request.getSession(true); // crea sesión si no existe 
+        
+        session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
+                             SecurityContextHolder.getContext());
+
+         return "redirect:/feed"; // ✅ redirección real
+
+    } catch (AuthenticationException ex) {
+        
+        return "Login fallido: " + ex.getMessage();
+        
     }
 }
-    
-    
+  
     @PostMapping("/register")
     public String register( @RequestParam String name,
                                          @RequestParam String lastName,
@@ -164,6 +180,7 @@ public class userControllerPost {
         user.setPasswordHash(password);
         user.setBirthdate(birthDate);
         user.setAddress(address);
+        user.setNumberPhone(cellPhoneNumber); 
         
         if (country != null && !country.equals(0L)) { // campo opcional
     
@@ -283,6 +300,19 @@ public class userControllerPost {
         
     }
     
+    
+    
+    @PostMapping("/profile")
+    public String profile(){
+        
+  
+        
+       return "redirect:/feed";
+        
+    }
+    
+   
+        
   
     
 }

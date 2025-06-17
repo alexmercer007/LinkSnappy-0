@@ -73,6 +73,8 @@ public class User {
  
  private String address;
  
+ private String numberPhone;
+ 
  @ManyToOne
  @JoinColumn( name = "maritalstatus_id")
  private MaritalStatus maritalStatus;   
@@ -186,6 +188,12 @@ public String getProfilePicture(){
 public String getAddress(){
 
      return this.address;
+
+}
+
+public String getNumberPhone(){
+
+     return this.numberPhone;
 
 }
 
@@ -321,6 +329,12 @@ public void setProfilePicture( String profilePicture){
 public void setAddress( String address ){
 
     this.address = address;
+
+}
+
+public void setNumberPhone( String numberPhone ){
+
+     this.numberPhone = numberPhone;
 
 }
 

@@ -498,6 +498,15 @@ header {
     
 }
 
+a {
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       
+}
+
 .user-Options {
     
     color: rgba(30, 60, 90, 1); 
@@ -508,6 +517,7 @@ header {
     background-color: rgba(255, 255, 255, 0.7);
     border: 3px solid rgba(30, 60, 90, 0.8);
     border-radius: 20px; 
+    
     cursor: pointer;
     transition: 200ms ease;
       
@@ -525,6 +535,46 @@ header {
      transform: scale(0.9);
      background-color: rgba(255, 255, 255, 0.5);
       
+}
+
+.box-form__button {
+    
+    display: flex;
+    position:relative;
+    width: 100%;
+    border: solid red;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user-Options_logout {
+    
+    width: 40%;
+    height: 50px;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 3px solid rgba(30, 60, 90, 0.8);
+    border-radius: 20px; 
+    
+    cursor: pointer;
+    transition: 200ms ease;
+    
+    
+}
+
+.user-Options_logout:hover {
+    
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    
+}
+
+.user-Options_logout:active {
+    
+    transform: scale(0.9);
+    background-color: rgba(255, 255, 255, 0.5);
+    
 }
 
 

@@ -20,10 +20,10 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  */
 
 @Configuration
-@EnableWebSecurity 
+@EnableWebSecurity
 public class SecurityConfig {
-    
-     private final UserDetailsService userDetailsService;
+
+    private final UserDetailsService userDetailsService;
 
     public SecurityConfig(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
@@ -33,27 +33,44 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
-    
-    
-  @Bean
-  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http
-        .csrf(csrf -> csrf
-            .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-        ) // CSRF habilitado y accesible desde el frontend
-        .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/login", "/register", "/style/**", "/js/**").permitAll() // rutas públicas
-            .requestMatchers("/admin/**").hasRole("ADMIN")  // ejemplo de ruta protegida solo admin
-            .anyRequest().authenticated() // el resto requiere autenticación
-        );
-    return http.build();
+
+       @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers(
+                    "/login", 
+                    "/register", 
+                    "/style/**", 
+                    "/js/**", 
+                    "/images/**", 
+                    "/recovery", 
+                    "/recoveryPassword", 
+                    "/term"
+                ).permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/feed", "/profile", "/setting").authenticated()
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login") // tu página de login personalizada (GET)
+                .loginProcessingUrl("/no-login") // Spring procesa este POST automáticamente
+                .defaultSuccessUrl("/feed", true) // redirige a /feed si el login fue exitoso
+                .permitAll()
+            )
+            .logout(logout -> logout
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login?logout")
+                .permitAll()
+            );
+
+        return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }
 
-   @Bean
-    public PasswordEncoder passwordEncoder() {
-        
-        return new BCryptPasswordEncoder();
-        
-    } 
-    
-}
+

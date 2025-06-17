@@ -1,0 +1,29 @@
+
+/* 
+    Created on : 14 jun 2025, 10:12:50 p. m.
+    Author     : AlejandroRC
+*/
+
+.container-box {
+    
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    border: solid red;
+    
+    
+}
+
+.container-box__aside {
+    
+    display: flex;
+    position: relative;
+    width: 20%;
+    height: auto;
+    border: solid gold;
+    
+    
+    
+}
