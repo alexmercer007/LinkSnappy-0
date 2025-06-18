@@ -17,7 +17,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
@@ -97,6 +99,15 @@ public class User {
  @ManyToOne
  @JoinColumn(name="profession")
  private Profession profession; 
+ 
+ @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Messages> messages = new ArrayList<>(); 
+ 
+@OneToMany(mappedBy = "sender", cascade = CascadeType.ALL)
+private List<Messages> sentMessages;
+
+@OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL)
+private List<Messages> receivedMessages;
 
  @Column(name="created_at")
  private LocalDateTime createdAt; 
@@ -209,6 +220,18 @@ public List<Publication> getPublications(){
     
 }
 
+public List<Messages> getSentMessages() {
+    
+    return sentMessages;
+    
+}
+
+public List<Messages> getReceivedMessages() {
+    
+    return receivedMessages;
+    
+}
+
 
 public Region getRegionId(){
     
@@ -246,6 +269,16 @@ public UserRoles getRole() {
     return role;
     
 }
+
+public List<Messages> getMessages(){
+    
+    return this.messages;
+    
+}
+
+
+
+
 
 
 //-------------------------------------------------------------------------- Setters ------------------------------------------------------------------------------------//
