@@ -29,11 +29,6 @@ messages.addEventListener("click", ()=>{
 
 
 
-
-
-
-
-
 //panel-notifications//
 
 const notifications = document.getElementById("notifications");
@@ -62,13 +57,6 @@ notifications.addEventListener("click", ()=>{
     }
     
 });
-
-
-
-
-
-
-
 
 
 
@@ -105,10 +93,23 @@ profile.addEventListener("click", ()=>{
 
 
 
+const boxMessage = document.querySelector(".box-message_chat");
+const minimize = document.getElementById("minimize");
+const close = document.getElementById("close");
 
+// Minimiza o expande cambiando el % de altura
+minimize.addEventListener("click", () => {
+    
+  boxMessage.classList.toggle("minimized");
+  
+});
 
-
-
+// Oculta completamente
+close.addEventListener("click", () => {
+    
+  boxMessage.style.display = "none";
+  
+});
 
 
 

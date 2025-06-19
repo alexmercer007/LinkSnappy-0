@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!--   <link rel="stylesheet" href="../../static/style/feed.css" type="text/css"/> -->
-    <link rel="stylesheet" th:href="@{/style/feed.css}" type="text/css"> 
+   <link rel="stylesheet" href="../../static/style/feed.css" type="text/css"/> 
+  <!--  <link rel="stylesheet" th:href="@{/style/feed.css}" type="text/css"> -->
     <title>LinkSnappy</title>
 </head>
 
@@ -119,13 +119,60 @@
              <div>
                  <p>hola</p>
             </div>
+            <div class="box-message_chat">                  
+                <div class="box-x">
+                    <button class="user-image" ><img src="../../static/image/ImageWeb/imagen.png" alt=""></button> 
+                    <div class="box-username">                 
+                    <span>hola</span>
+                    <span>hola</span>
+                    </div>
+                    <button class="button-function" id="minimize">_</button>
+                    <button class="button-function" id="close">X</button>
+                </div>
+                
+                <div class="box-user_chat">
+                    <div class="box-user__globe">
+                        <div class="user">
+                            <img class="user-ms" src="../../static/image/ImageWeb/imagen.png" alt="alt"/>
+                        </div>
+                        <div class="globe">
+                            <span ></span>
+                        </div><!-- comment -->
+                    </div >
+                    <div class="day_send_received">
+                            <span></span>
+                        </div>
+                    <div class="box-user__globe">
+                        <div>
+                            <img class="user-ms" src="../../static/image/ImageWeb/imagen.png" alt="alt"/>
+                        </div>  
+                        <div class="globe">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="day_send_received">
+                            <span></span>
+                        </div>
+                </div>
+
+                 <hr>
+                 
+                <div class="box-chat">                        
+                    <button class="buttonSend">
+                        <img class="sendImage" src="../../static/image/ImageWeb/imagen.png" alt="">
+                    </button>
+                    <input class="input-none" type="file">      
+                    <textarea class="input__chat" placeholder="Escribe un mensaje..."></textarea> 
+                    <button class="send">send</button>
+                </div>                                                   
+            </div>
         </aside>     
     </div>
     <footer>
 
     </footer>
-<!--   <script src="../../static/js/feed.js"> </script>  -->
-    <script th:src="@{/js/feed.js}"></script> 
+   <script src="../../static/js/feed.js"> </script>  
+ <!--   <script th:src="@{/js/feed.js}"></script> -->
 </body>
 
 </html>

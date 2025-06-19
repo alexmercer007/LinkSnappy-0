@@ -680,9 +680,254 @@ a {
     box-sizing: border-box;
     border: 2px solid green;
     right: 0;
+    flex-direction: column;
     overflow-y: auto;  
     
 }
+
+
+
+.box-message_chat {
+    
+    display: block;
+    position: fixed;
+    width: 390px;
+    height: auto;
+    background-color: whitesmoke;
+    min-height: 100px;  /* 👈 No se puede hacer más pequeño que esto */
+    max-height: 600px;  /* 👈 No se puede hacer más grande que esto */
+    bottom: 0px;
+    border-radius: 10px;
+    z-index: 100;
+    
+}
+
+.box-user_chat {
+    
+    display: flex;
+    position: relative;
+    width:100%;
+    height: auto;
+    flex-direction: column;
+    
+}
+
+.box-user__globe {
+    
+    display: flex;
+    position: relative;
+    width: 30px;
+    height: auto;
+    align-items: flex-start; 
+    margin: 8px;
+    flex-direction: row;
+   
+}
+
+.globe {
+    
+    
+    display: block;
+    position: relative;
+    
+    max-width: 280px;;
+    height: auto;
+    border: solid red;
+    border-radius: 10px;
+    background-color: rgba(0, 39, 255,0.3);
+    padding: 10px;
+    margin: 8px;
+    left: 20px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    
+}
+
+.day_send_received {
+    
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+.user {
+    
+    position: relative;
+    justify-content: start;
+    justify-items: start;
+    
+}
+
+.user-ms {
+    
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    
+}
+
+.box-chat {
+    
+    
+   display:flex;
+    position: relative;
+    width: 98%;
+    height: 50px;
+    min-height: 1.5em;
+    max-height: 120px;
+    border: solid gold;
+    margin: 0px;
+    gap: 10px;
+
+   align-items: center;
+    
+}
+
+.labelSend {
+    
+    position: relative;
+    width: 30px;
+    height: 30px;
+    
+    
+}
+
+.buttonSend {
+    
+    display: flex;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: solid green;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    
+       
+}
+
+.sendImage {
+    
+    display: flex;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: solid green;
+    border-radius: 50px;
+    object-fit: cover;
+     justify-content: center;
+    align-items: center;
+       
+}
+
+.sendVideo {
+    
+   display: flex;
+    position: relative;
+    width: 10px;
+    height: 30px;   
+    border: solid green;
+    
+}
+
+.sendFile {
+    
+    display: flex;
+    position: relative;
+    width: 10px;
+    height: 30px;
+    border: solid green;
+    
+}
+
+.input-none {
+    
+   display: none;
+    
+}
+
+hr {
+    
+    position: relative;
+    
+    width: 100%;
+    
+}
+
+
+.box-x {
+    
+    display: flex;
+    position: relative;
+    width: 97%;
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+    gap: 5px;
+    
+}
+
+.box-username {
+    
+    display: flex;
+    width: 55%;
+    height: auto;
+    flex-direction: column;
+    
+    
+}
+
+.user-image {
+    
+     width: 50px;
+    height: 50px;
+    
+}
+
+
+.button-function {
+    
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    
+    
+}
+
+
+.input__chat {
+    
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto; 
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px;
+    
+    
+}
+
+.send {
+    
+   width: 55px;
+   height: 35px;  
+   border-radius: 10px;
+    margin: 10px;
+   
+}
+
+
+
 
 
 /**------------------------------------------------------------------------------------------------------------------------------------------------------------**/
