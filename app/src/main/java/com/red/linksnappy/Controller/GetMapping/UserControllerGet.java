@@ -5,6 +5,8 @@ package com.red.LinkSnappy.Controller.GetMapping;
 import com.red.linkSnappy.repository.UserRepository;
 import com.red.linksnappy.userManager.User;
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -12,6 +14,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -73,6 +77,22 @@ public class UserControllerGet {
        return "feed/feed";
         
     }
+     
+     @GetMapping("/user/search")
+     @ResponseBody
+     public List<User> buscarUsuarios(@RequestParam String query) {
+         
+         if (query == null || query.isBlank()) {
+             
+        return Collections.emptyList();
+        
+   
+         }
+         
+       return userRepository.findByUserNameContainingIgnoreCase(query); 
+       
+     }
+
     
      @GetMapping("/profile")
     public String profile(@AuthenticationPrincipal UserDetails userDetails, Model model){

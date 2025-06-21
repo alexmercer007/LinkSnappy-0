@@ -1,5 +1,25 @@
 
 
+
+document.getElementById("social-header__search-input").addEventListener("input", function () {
+    const query = this.value;
+    fetch(`/user/search?query=${encodeURIComponent(query)}`)
+        .then(response => response.json())
+        .then(data => {
+            // Mostrar resultados
+            console.log(data);
+            document.getElementById("results").innerHTML = data.map(item => `<p>${item.userName}</p>`).join("");
+        });
+});
+
+
+
+
+
+
+
+
+
 //panel-messages//
 
 const messages = document.getElementById("messages");

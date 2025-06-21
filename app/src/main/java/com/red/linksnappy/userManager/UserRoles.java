@@ -2,6 +2,8 @@
 
 package com.red.linksnappy.userManager;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,6 +35,7 @@ public class UserRoles {
     @OneToOne
     @MapsId  // <- le dice a Hibernate que este ID viene de user.getId() 
     @JoinColumn(name = "id")
+    @JsonBackReference
     private User user;
     
   

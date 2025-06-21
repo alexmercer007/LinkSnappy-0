@@ -2,6 +2,8 @@
 
 package com.red.linksnappy.userManager;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,6 +49,7 @@ public class User {
  private String lastName;
  
  @Column(name="passwordhash")
+ @JsonIgnore
  private String passwordHash;
  
  @Column(name="birthdate")
@@ -75,6 +78,7 @@ public class User {
  
  private String address;
  
+ @JsonIgnore
  private String numberPhone;
  
  @ManyToOne
@@ -82,11 +86,13 @@ public class User {
  private MaritalStatus maritalStatus;   
  
  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+ @JsonIgnore
  private Biography biography;
  
  // Relación uno a muchos
-    @OneToMany(mappedBy = "user")
-    private List<Publication> publications;
+ @OneToMany(mappedBy = "user")
+ @JsonIgnore
+ private List<Publication> publications;
     
  @ManyToOne
  @JoinColumn(name="region_id")
@@ -101,12 +107,15 @@ public class User {
  private Profession profession; 
  
  @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
+ @JsonIgnore
 private List<Messages> messages = new ArrayList<>(); 
  
 @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL)
+@JsonIgnore
 private List<Messages> sentMessages;
 
 @OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL)
+@JsonIgnore
 private List<Messages> receivedMessages;
 
  @Column(name="created_at")
@@ -119,6 +128,7 @@ private List<Messages> receivedMessages;
  private boolean isVerified;
  
  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+ @JsonManagedReference
   private UserRoles role; 
  
  
