@@ -85,6 +85,15 @@ public class UserService {
 }
 
     
+  public String messageContentService( String content ){
+      
+      
+      
+    return "";
+            
+  } 
+   
+   
     
     
 }

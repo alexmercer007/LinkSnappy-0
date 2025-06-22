@@ -3,6 +3,9 @@
 package com.red.LinkSnappy.Controller.GetMapping;
 
 import com.red.linkSnappy.repository.UserRepository;
+import com.red.linksnappy.dto.UserDTO;
+import com.red.linksnappy.repository.MessagesRepository;
+import com.red.linksnappy.userManager.Messages;
 import com.red.linksnappy.userManager.User;
 import java.time.LocalDate;
 import java.util.Collections;
@@ -27,7 +30,12 @@ public class UserControllerGet {
     
     @Autowired
     private UserRepository userRepository;
+    private MessagesRepository messagesRepository;
     private User user;
+    private Messages messages;
+    
+    
+    private UserDTO userDto;
     
     
     @GetMapping("/login")
@@ -69,10 +77,19 @@ public class UserControllerGet {
 
        // Luego buscas tu usuario completo desde la base de datos
        Optional<User> optionalUser = userRepository.findByUserName(username); 
+       
+       this.user = optionalUser.get();   
+       
+       Optional<Messages> optinalMessage = messagesRepository.findById(user.getId());
          
-       this.user = optionalUser.get();
+       this.messages = optinalMessage.get();
         
         model.addAttribute("username",user.getUserName());
+        
+        model.addAttribute("chat",messages.getContent());
+        
+        
+        
         
        return "feed/feed";
         

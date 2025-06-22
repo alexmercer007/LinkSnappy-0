@@ -7,8 +7,6 @@ import com.red.linksnappy.userManager.Publication;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 
 /**
@@ -56,7 +54,8 @@ public class UserDTO {
    private boolean isActive; 
  
    private boolean isVerified;
- 
+   
+   
     
    public void userSearchForIdDto( Long id ){
         
@@ -98,7 +97,7 @@ public class UserDTO {
 }
 
 
-    
+
     
     
     

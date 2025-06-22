@@ -228,11 +228,7 @@ public String login(@RequestParam String email, @RequestParam String password, H
              user.setRegionId(countyKey);
   
            }
-        
-        
-        
-        
-        
+          
         if(maritalStatusRaw != null && !maritalStatusRaw.trim().isEmpty() && !maritalStatusRaw.equals("0")) {
             
             Long maritalStatus = Long.parseLong(maritalStatusRaw);
@@ -311,6 +307,17 @@ public String login(@RequestParam String email, @RequestParam String password, H
         
     }
     
+    
+    @PostMapping("/feed")
+    public String feed(){
+        
+        
+        
+        
+        
+        return "";
+        
+    }
    
         
   

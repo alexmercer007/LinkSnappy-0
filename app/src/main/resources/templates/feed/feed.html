@@ -35,7 +35,7 @@
                       <button id="user-image__search" class="user-image__search" type="button">
                         <img class="user-image__search" src="" alt="">
                       </button>                
-                        <strong class="messages-font">Alejandro Reyes Castillo</strong>   
+                        <strong class="messages-font"></strong>   
                     </div>        
                 </div>
                 <div class="panel-messages__show">
@@ -43,7 +43,7 @@
                         <img class="user-image" src="" alt="">
                     </button>
                     <div class="friends">
-                        <strong class="messages-font">Alejandro Reyes Castillo</strong>
+                        <strong class="messages-font"></strong>
                         <span class="messages-color">hola</span>
                     </div>
                 </div>
@@ -148,11 +148,11 @@
                             <img class="user-ms" src="../../static/image/ImageWeb/imagen.png" alt="alt"/>
                         </div>  
                         <div class="globe">
-                            <span></span>
+                            <span  th:text="${username}"></span>
                         </div>
                     </div>
                     <div class="day_send_received">
-                            <span></span>
+                            <span  th:text="${username}"></span>
                         </div>
                 </div>
 
@@ -163,8 +163,8 @@
                         <img class="sendImage" src="../../static/image/ImageWeb/imagen.png" alt="">
                     </button>
                     <input class="input-none" type="file">      
-                    <textarea class="input__chat" placeholder="Escribe un mensaje..."></textarea> 
-                    <button class="send">send</button>
+                    <textarea class="input__chat" placeholder="Escribe un mensaje..." name="chat"></textarea> 
+                    <button class="send" id="chatSend" >send</button>
                 </div>                                                   
             </div>
         </aside>     
